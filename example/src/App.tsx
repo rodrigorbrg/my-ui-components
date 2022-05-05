@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { FeedbackWidget } from '@rodrigorbrg/widget-feedback';
+import { FeedbackWidget } from 'widget-feedback';
 
 export default function App() {
   return (

@@ -8,18 +8,8 @@
   "react-native": "src/index",
   "source": "src/index",
   "files": [
-    "src",
-    "lib",
-    "android",
-    "ios",
-    "cpp",
-    "widget-feedback.podspec",
-    "!lib/typescript/example",
-    "!android/build",
-    "!ios/build",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__"
+    "lib/",
+    "src/"
   ],
   "scripts": {
     "test": "jest",
@@ -143,5 +133,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "react-native-reanimated": "^2.8.0"
   }
 }

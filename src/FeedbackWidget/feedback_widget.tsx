@@ -1,9 +1,13 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text} from 'react-native';
 
 import styles from './styles';
 
 function FeedbackWidget() {
-  return <View style={styles.container} />;
+  return (
+    <View style={styles.container}>
+      <Text>{'OI'}</Text>
+    </View>
+  );
 }
 export default FeedbackWidget;
