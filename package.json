@@ -36,13 +36,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/rodrigorbrg/widget-feedback",
+  "repository": "https://github.com/rodrigorbrg/widget-feedback-react-native",
   "author": "Rodrigo Gomes <rodrigorbrg@gmail.com> (https://github.com/rodrigorbrg)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rodrigorbrg/widget-feedback/issues"
+    "url": "https://github.com/rodrigorbrg/widget-feedback-react-native./issues"
   },
-  "homepage": "https://github.com/rodrigorbrg/widget-feedback#readme",
+  "homepage": "https://github.com/rodrigorbrg/widget-feedback-react-native.#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
