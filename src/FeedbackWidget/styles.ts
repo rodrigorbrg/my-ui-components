@@ -3,6 +3,10 @@ import { theme } from '../theme';
 
 export default StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: theme.colors.background,
+  },
+  button: {
     alignItems: 'center',
     backgroundColor: theme.colors.brand,
     borderRadius: 24,
@@ -12,5 +16,13 @@ export default StyleSheet.create({
     position: 'absolute',
     right: 16,
     width: 48,
+  },
+  modal: {
+    backgroundColor: theme.colors.surface_primary,
+    paddingBottom: 16,
+  },
+  handle: {
+    backgroundColor: theme.colors.text_secondary,
+    width: 56,
   },
 });
