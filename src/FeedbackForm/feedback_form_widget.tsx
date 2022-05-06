@@ -28,6 +28,15 @@ function FeedbackForm({ image, title, typeFeedBack, resetFeedback }: Props) {
   const [feedback, setFeedback] = useState('');
   const [screenshot, setScreenshot] = useState('');
   const [loading, setLoading] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
 
   const onChange = (
     e: NativeSyntheticEvent<TextInputChangeEventData>
@@ -76,10 +85,19 @@ function FeedbackForm({ image, title, typeFeedBack, resetFeedback }: Props) {
         <View />
       </View>
       <TextInput
+        multiline={true}
         numberOfLines={5}
+        placeholderTextColor={theme.colors.text_secondary}
         value={feedback}
         onChange={onChange}
-        style={styles.form}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        style={[
+          styles.form,
+          {
+            borderColor: isFocused ? theme.colors.brand : theme.colors.stroke,
+          },
+        ]}
       />
       <View style={styles.footer}>
         <SnapButton screenshot={screenshot} setScreenshot={onPrintScreen} />
