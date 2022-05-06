@@ -15,8 +15,8 @@ export default StyleSheet.create({
     width: 24,
   },
   camera: {
-    // position: 'absolute',
-    // bottom: 1,
-    // right: 1,
+    position: 'absolute',
+    bottom: 8,
+    right: 8,
   },
 });
