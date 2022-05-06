@@ -19,7 +19,7 @@ function FeedbackWidget() {
   const [done, setDone] = useState(false);
 
   // variables
-  const snapPoints = useMemo(() => [1, 280], []);
+  const snapPoints = useMemo(() => [1, 270], []);
 
   const handleSheetOpen = useCallback(() => {
     sheetRef.current?.expand();
