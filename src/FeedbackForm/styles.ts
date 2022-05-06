@@ -6,26 +6,28 @@ export default StyleSheet.create({
     backgroundColor: theme.colors.surface_primary,
   },
   header: {
-    alignItems: 'center',
-    justifyContent: 'space-between',
     flexDirection: 'row',
-    marginBottom: 16,
+    marginVertical: 16,
   },
   arrow: {
-    marginStart: 16,
+    marginStart: 24,
   },
-  title: {
+  titleContainer: {
+    flex: 1,
     flexDirection: 'row',
-  },
-  text: {
-    color: theme.colors.text_primary,
-    fontSize: 18,
-    textAlign: 'center',
-    marginHorizontal: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingRight: 48,
   },
   image: {
     height: 24,
     width: 24,
+  },
+  title: {
+    color: theme.colors.text_primary,
+    fontSize: 18,
+    textAlign: 'center',
+    marginHorizontal: 8,
   },
   form: {
     backgroundColor: theme.colors.surface_primary,

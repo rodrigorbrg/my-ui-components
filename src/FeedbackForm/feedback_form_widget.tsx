@@ -69,9 +69,9 @@ function FeedbackForm({ image, title, typeFeedBack, resetFeedback }: Props) {
             weight={'bold'}
           />
         </TouchableOpacity>
-        <View style={styles.title}>
+        <View style={styles.titleContainer}>
           <Image source={image} style={styles.image} />
-          <Text style={styles.text}>{title}</Text>
+          <Text style={styles.title}>{title}</Text>
         </View>
         <View />
       </View>
