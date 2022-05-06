@@ -7,12 +7,13 @@ import { theme } from '../theme';
 
 interface Props {
   screenshot: string;
-  setScreenshot: () => void;
+  setScreenshot: (base64: string) => void;
 }
 
 function SnapButton({ screenshot, setScreenshot }: Props) {
   const snap = () => {
-    setScreenshot();
+    const base64 = '';
+    setScreenshot(base64);
   };
   return (
     <TouchableOpacity onPress={snap} style={styles.container}>
