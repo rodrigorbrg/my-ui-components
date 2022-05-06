@@ -21,10 +21,11 @@ interface Props {
   image: ImageSourcePropType;
   title: string;
   typeFeedBack: FeedbackType;
-  resetFeedback: () => void;
+  reset: () => void;
+  setDone: (send: boolean) => void;
 }
 
-function FeedbackForm({ image, title, typeFeedBack, resetFeedback }: Props) {
+function FeedbackForm({ image, title, typeFeedBack, reset, setDone }: Props) {
   const [feedback, setFeedback] = useState('');
   const [screenshot, setScreenshot] = useState('');
   const [loading, setLoading] = useState(false);
@@ -66,12 +67,13 @@ function FeedbackForm({ image, title, typeFeedBack, resetFeedback }: Props) {
       console.log(e);
     }
     setLoading(false);
+    setDone(true);
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity style={styles.arrow} onPress={resetFeedback}>
+        <TouchableOpacity style={styles.arrow} onPress={reset}>
           <ArrowLeft
             color={theme.colors.text_secondary}
             size={24}

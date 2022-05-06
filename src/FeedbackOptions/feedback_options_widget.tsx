@@ -19,7 +19,7 @@ function FeedbackOptions({ setOptionFeedback }: Props) {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.title}>{'Deixe seu feedback'}</Text>
       <View style={styles.feedbackTypes}>
         <Option

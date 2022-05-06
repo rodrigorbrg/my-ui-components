@@ -6,6 +6,7 @@ import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
 
 import FeedbackOptions from '../FeedbackOptions';
 import FeedbackForm from '../FeedbackForm';
+import FeedbackSuccess from '../FeedbackSuccess';
 import { feedbackTypes } from '../utils/feedbackTypes';
 import { theme } from '../theme';
 import styles from './styles';
@@ -33,10 +34,6 @@ function FeedbackWidget() {
     setTypeFeedback(type);
   };
 
-  if (done) {
-    return <></>;
-  }
-
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -58,12 +55,17 @@ function FeedbackWidget() {
       >
         {!typeFeedBack ? (
           <FeedbackOptions setOptionFeedback={setOptionFeedback} />
+        ) : done ? (
+          <FeedbackSuccess reset={resetFeedback} />
         ) : (
           <FeedbackForm
             typeFeedBack={typeFeedBack}
             image={feedbackTypes[typeFeedBack].image}
             title={feedbackTypes[typeFeedBack].title}
-            resetFeedback={resetFeedback}
+            reset={resetFeedback}
+            setDone={(send: boolean) => {
+              setDone(send);
+            }}
           />
         )}
       </BottomSheet>
