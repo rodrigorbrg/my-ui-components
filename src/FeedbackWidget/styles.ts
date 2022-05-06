@@ -5,7 +5,7 @@ export default StyleSheet.create({
   container: {
     alignItems: 'center',
     backgroundColor: theme.colors.brand,
-    borderRadius: 48,
+    borderRadius: 24,
     bottom: 80,
     height: 48,
     justifyContent: 'center',
