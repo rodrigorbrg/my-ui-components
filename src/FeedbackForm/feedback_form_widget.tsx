@@ -26,6 +26,7 @@ interface Props {
 
 function FeedbackForm({ image, title, typeFeedBack, resetFeedback }: Props) {
   const [feedback, setFeedback] = useState('');
+  const [screenshot, setScreenshot] = useState('');
   const [loading, setLoading] = useState(false);
 
   const onChange = (
@@ -35,18 +36,26 @@ function FeedbackForm({ image, title, typeFeedBack, resetFeedback }: Props) {
     setFeedback(value);
   };
 
+  const onPrintScreen = (base64: string) => {
+    setScreenshot(base64);
+  };
+
   const submit = async () => {
     const body = {
       comment: feedback,
       type: typeFeedBack,
-      // screenshot: screenShot,
+      screenshot,
     };
     setLoading(true);
-    await fetch('http://localhost:3001/feedback', {
-      method: 'POST',
-      body: JSON.stringify(body),
-      // mode: 'no-cors',
-    });
+    try {
+      await fetch('http://localhost:3001/feedback', {
+        method: 'POST',
+        body: JSON.stringify(body),
+        // mode: 'no-cors',
+      });
+    } catch (e) {
+      console.log(e);
+    }
     setLoading(false);
   };
 
@@ -73,14 +82,9 @@ function FeedbackForm({ image, title, typeFeedBack, resetFeedback }: Props) {
         style={styles.form}
       />
       <View style={styles.footer}>
-        <SnapButton
-          screenshot={'123'}
-          setScreenshot={function (): void {
-            throw new Error('Function not implemented.');
-          }}
-        />
+        <SnapButton screenshot={screenshot} setScreenshot={onPrintScreen} />
         <Button onPress={submit} loading={loading} disabled={false}>
-          <Text>Enviar feedback</Text>
+          Enviar feedback
         </Button>
       </View>
     </View>
