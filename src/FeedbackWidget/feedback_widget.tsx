@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import { ChatTeardropDots } from 'phosphor-react-native';
 
 import styles from './styles';
 
 function FeedbackWidget() {
   return (
     <View style={styles.container}>
-      <Text>{'ICON'}</Text>
+      <ChatTeardropDots />
     </View>
   );
 }
