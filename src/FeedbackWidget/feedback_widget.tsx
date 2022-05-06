@@ -39,6 +39,17 @@ function FeedbackWidget() {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={handleSheetOpen}
+        activeOpacity={0.8}
+      >
+        <ChatTeardropDots
+          color={theme.colors.text_on_brand_color}
+          weight={'bold'}
+          size={24}
+        />
+      </TouchableOpacity>
       <BottomSheet
         ref={sheetRef}
         snapPoints={snapPoints}
@@ -56,17 +67,6 @@ function FeedbackWidget() {
           />
         )}
       </BottomSheet>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={handleSheetOpen}
-        activeOpacity={0.8}
-      >
-        <ChatTeardropDots
-          color={theme.colors.text_on_brand_color}
-          weight={'bold'}
-          size={24}
-        />
-      </TouchableOpacity>
     </View>
   );
 }
