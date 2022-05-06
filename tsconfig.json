@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "widget-feedback": ["./"]
+      "widget-feedback": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

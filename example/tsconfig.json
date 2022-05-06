@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@rodrigorbrg/widget-feedback": ["../"]
+      "@rodrigorbrg/widget-feedback": ["../src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
