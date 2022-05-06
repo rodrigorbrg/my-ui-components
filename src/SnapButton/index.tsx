@@ -1,19 +1,28 @@
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
-import { Camera } from 'phosphor-react-native';
+import { Camera, Trash } from 'phosphor-react-native';
+import { captureScreen } from 'react-native-view-shot';
 
 import styles from './styles';
 import { theme } from '../theme';
 
 interface Props {
-  screenshot: string;
-  setScreenshot: (base64: string) => void;
+  screenshot?: string | null;
+  setScreenshot: (base64: string | null) => void;
 }
 
 function SnapButton({ screenshot, setScreenshot }: Props) {
-  const snap = () => {
-    const base64 = '';
-    setScreenshot(base64);
+  const snap = async () => {
+    if (!screenshot) {
+      const base64 = await captureScreen({
+        format: 'png',
+        result: 'base64',
+        // snapshotContentContainer: true,
+      });
+      setScreenshot(base64);
+    } else {
+      setScreenshot(null);
+    }
   };
   return (
     <TouchableOpacity onPress={snap} style={styles.container}>
@@ -21,13 +30,21 @@ function SnapButton({ screenshot, setScreenshot }: Props) {
         source={{
           uri: `data:image/png;base64,${screenshot}`,
         }}
-        style={styles.image}
+        style={styles.container}
       />
-      <Camera
-        color={theme.colors.text_primary}
-        size={24}
-        style={styles.camera}
-      />
+      {!screenshot ? (
+        <Camera
+          color={theme.colors.text_primary}
+          size={24}
+          style={styles.camera}
+        />
+      ) : (
+        <Trash
+          color={theme.colors.text_primary}
+          size={24}
+          style={styles.trash}
+        />
+      )}
     </TouchableOpacity>
   );
 }

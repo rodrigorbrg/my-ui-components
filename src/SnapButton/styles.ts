@@ -19,4 +19,9 @@ export default StyleSheet.create({
     bottom: 8,
     right: 8,
   },
+  trash: {
+    position: 'absolute',
+    bottom: 1,
+    right: 1,
+  },
 });

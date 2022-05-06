@@ -27,7 +27,7 @@ interface Props {
 
 function FeedbackForm({ image, title, typeFeedBack, reset, setDone }: Props) {
   const [feedback, setFeedback] = useState('');
-  const [screenshot, setScreenshot] = useState('');
+  const [screenshot, setScreenshot] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
 
@@ -46,7 +46,7 @@ function FeedbackForm({ image, title, typeFeedBack, reset, setDone }: Props) {
     setFeedback(value);
   };
 
-  const onPrintScreen = (base64: string) => {
+  const onPrintScreen = (base64: string | null) => {
     setScreenshot(base64);
   };
 
