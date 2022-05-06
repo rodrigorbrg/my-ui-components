@@ -58,13 +58,16 @@
     "typescript": "^4.1.3"
   },
   "dependencies": {
+    "@gorhom/bottom-sheet": "^4",
     "phosphor-react-native": "^1.1.1",
     "react-native-reanimated": "^2.8.0"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-svg": "*"
+    "react-native-svg": "*",
+    "react-native-gesture-handler": ">=1.10.1",
+    "react-native-reanimated": ">=2.2.0"
   },
   "jest": {
     "preset": "react-native",

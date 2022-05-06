@@ -6,11 +6,11 @@ export default StyleSheet.create({
     alignItems: 'center',
     backgroundColor: theme.colors.brand,
     borderRadius: 24,
-    bottom: 80,
+    bottom: 16,
     height: 48,
     justifyContent: 'center',
     position: 'absolute',
-    right: 30,
+    right: 16,
     width: 48,
   },
 });
