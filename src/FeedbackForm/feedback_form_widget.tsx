@@ -63,7 +63,7 @@ function FeedbackForm({ image, title, typeFeedBack, reset, setDone }: Props) {
       },
     };
     const appAPI = axios.create({
-      baseURL: 'widget-feedback-server-production-6d50.up.railway.app',
+      baseURL: 'https://widget-feedback-server-production-6d50.up.railway.app',
       timeout: 60000,
     });
     setLoading(true);
