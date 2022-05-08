@@ -15,9 +15,9 @@ function SnapButton({ screenshot, setScreenshot }: Props) {
   const snap = async () => {
     if (!screenshot) {
       const base64 = await captureScreen({
-        format: 'png',
-        result: 'base64',
-        // snapshotContentContainer: true,
+        format: 'jpg',
+        quality: 0.8,
+        result: 'data-uri',
       });
       setScreenshot(base64);
     } else {
