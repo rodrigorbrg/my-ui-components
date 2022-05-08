@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { View, TouchableOpacity, ActivityIndicator, Text } from 'react-native';
 
 import { theme } from '../theme';
@@ -20,45 +20,47 @@ export default function Button({
   disabled?: boolean;
 }) {
   const [textColor, setTextColor] = useState('#FFF');
-  const styleButton = useCallback(() => {
-    let backgroundColor = 'transparent';
-    let borderColor = 'transparent';
+  const [backgroundColor, setBackgroundColor] = useState(theme.colors.brand);
+  const [borderColor, setborderColor] = useState(theme.colors.brand);
 
+  useEffect(() => {
     switch (color) {
       case 'primary':
-        backgroundColor = theme.colors.brand;
+        setBackgroundColor(theme.colors.brand);
         break;
       case 'secondary':
-        backgroundColor = theme.colors.surface_secondary;
+        setBackgroundColor(theme.colors.surface_secondary);
         break;
       default:
-        backgroundColor = theme.colors.brand;
+        setBackgroundColor(theme.colors.brand);
         break;
     }
 
     switch (mode) {
       case 'full':
-        backgroundColor = backgroundColor;
-        borderColor = backgroundColor;
-        // setTextColor('#FFF');
+        setBackgroundColor(backgroundColor);
+        setborderColor(backgroundColor);
+        setTextColor('#FFF');
         break;
       case 'outlined':
-        backgroundColor = 'transparent';
-        borderColor = backgroundColor;
-        // setTextColor(backgroundColor);
+        setBackgroundColor('transparent');
+        setborderColor(backgroundColor);
+        setTextColor(backgroundColor);
         break;
       case 'text':
-        backgroundColor = 'transparent';
-        borderColor = '#FFF';
-        // setTextColor(backgroundColor);
+        setBackgroundColor('transparent');
+        setborderColor('#FFF');
+        setTextColor(backgroundColor);
         break;
       default:
-        backgroundColor = backgroundColor;
-        borderColor = backgroundColor;
-        // setTextColor('#FFF');
+        setBackgroundColor(backgroundColor);
+        setTextColor(backgroundColor);
+        setTextColor('#FFF');
         break;
     }
+  }, [backgroundColor, color, mode]);
 
+  const styleButton = useCallback(() => {
     return {
       backgroundColor,
       borderColor,
@@ -66,12 +68,12 @@ export default function Button({
       flex: 1,
       height: 40,
     };
-  }, [color, mode]);
+  }, [backgroundColor, borderColor]);
 
   if (loading) {
     return (
       <View style={[styles.container, styleButton()]}>
-        <ActivityIndicator size="small" color={'#FFF'} />
+        <ActivityIndicator size="small" color={textColor} />
       </View>
     );
   }
