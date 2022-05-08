@@ -24,37 +24,41 @@ export default function Button({
   const [borderColor, setborderColor] = useState(theme.colors.brand);
 
   useEffect(() => {
+    let colorButton = theme.colors.brand;
     switch (color) {
       case 'primary':
-        setBackgroundColor(theme.colors.brand);
+        colorButton = theme.colors.brand;
+        setBackgroundColor(colorButton);
         break;
       case 'secondary':
-        setBackgroundColor(theme.colors.surface_secondary);
+        colorButton = theme.colors.surface_secondary;
+        setBackgroundColor(colorButton);
         break;
       default:
-        setBackgroundColor(theme.colors.brand);
+        colorButton = theme.colors.brand;
+        setBackgroundColor(colorButton);
         break;
     }
 
     switch (mode) {
       case 'full':
-        setBackgroundColor(backgroundColor);
-        setborderColor(backgroundColor);
+        setBackgroundColor(colorButton);
+        setborderColor(colorButton);
         setTextColor('#FFF');
         break;
       case 'outlined':
         setBackgroundColor('transparent');
-        setborderColor(backgroundColor);
-        setTextColor(backgroundColor);
+        setborderColor(colorButton);
+        setTextColor(colorButton);
         break;
       case 'text':
         setBackgroundColor('transparent');
-        setborderColor('#FFF');
-        setTextColor(backgroundColor);
+        setborderColor('transparent');
+        setTextColor(colorButton);
         break;
       default:
-        setBackgroundColor(backgroundColor);
-        setTextColor(backgroundColor);
+        setBackgroundColor(colorButton);
+        setTextColor(colorButton);
         setTextColor('#FFF');
         break;
     }
@@ -65,7 +69,7 @@ export default function Button({
       backgroundColor,
       borderColor,
       borderRadius: 6,
-      flex: 1,
+      borderWidth: 1,
       height: 40,
     };
   }, [backgroundColor, borderColor]);
