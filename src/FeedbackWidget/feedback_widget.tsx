@@ -13,7 +13,16 @@ import styles from './styles';
 
 export type FeedbackType = 'BUG' | 'IDEA' | 'OTHER' | null;
 
-function FeedbackWidget() {
+export interface FeedbackWidgetProps {
+  submitCallback?: (body: any) => Promise<void>;
+}
+export interface FeedbackBody {
+  comment: string;
+  type: FeedbackType;
+  screenshot?: string | undefined;
+}
+
+function FeedbackWidget({ submitCallback }: FeedbackWidgetProps) {
   const sheetRef = useRef<BottomSheet>(null);
   const [typeFeedBack, setTypeFeedback] = useState<FeedbackType>(null);
   const [done, setDone] = useState(false);
@@ -63,6 +72,7 @@ function FeedbackWidget() {
             image={feedbackTypes[typeFeedBack].image}
             title={feedbackTypes[typeFeedBack].title}
             reset={resetFeedback}
+            submitCallback={submitCallback}
             setDone={(send: boolean) => {
               setDone(send);
             }}

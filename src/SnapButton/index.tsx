@@ -8,7 +8,7 @@ import { theme } from '../theme';
 
 interface Props {
   screenshot?: string | null;
-  setScreenshot: (base64: string | null) => void;
+  setScreenshot: (base64: string | undefined) => void;
 }
 
 function SnapButton({ screenshot, setScreenshot }: Props) {
@@ -21,14 +21,14 @@ function SnapButton({ screenshot, setScreenshot }: Props) {
       });
       setScreenshot(base64);
     } else {
-      setScreenshot(null);
+      setScreenshot(undefined);
     }
   };
   return (
     <TouchableOpacity onPress={snap} style={styles.container}>
       <Image
         source={{
-          uri: `data:image/png;base64,${screenshot}`,
+          uri: `${screenshot}`,
         }}
         style={styles.container}
       />

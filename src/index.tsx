@@ -1,3 +1,3 @@
-import FeedbackWidget from './FeedbackWidget';
+import FeedbackWidget, { FeedbackBody, FeedbackType } from './FeedbackWidget';
 
-export { FeedbackWidget };
+export { FeedbackWidget, FeedbackBody, FeedbackType };

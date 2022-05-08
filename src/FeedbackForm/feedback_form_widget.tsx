@@ -10,9 +10,9 @@ import {
   TextInputChangeEventData,
 } from 'react-native';
 import { ArrowLeft } from 'phosphor-react-native';
-import axios from 'axios';
 
-import type { FeedbackType } from '../FeedbackWidget';
+import type { FeedbackType, FeedbackBody } from '../FeedbackWidget';
+// import { FeedbackBody } from '../FeedbackWidget';
 import Button from '../Button';
 import SnapButton from '../SnapButton';
 import styles from './styles';
@@ -22,13 +22,21 @@ interface Props {
   image: ImageSourcePropType;
   title: string;
   typeFeedBack: FeedbackType;
+  submitCallback?: (body: FeedbackBody) => Promise<void>;
   reset: () => void;
   setDone: (send: boolean) => void;
 }
 
-function FeedbackForm({ image, title, typeFeedBack, reset, setDone }: Props) {
+function FeedbackForm({
+  image,
+  title,
+  typeFeedBack,
+  submitCallback,
+  reset,
+  setDone,
+}: Props) {
   const [feedback, setFeedback] = useState('');
-  const [screenshot, setScreenshot] = useState<string | null>(null);
+  const [screenshot, setScreenshot] = useState<string | undefined>();
   const [loading, setLoading] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
 
@@ -47,7 +55,7 @@ function FeedbackForm({ image, title, typeFeedBack, reset, setDone }: Props) {
     setFeedback(value);
   };
 
-  const onPrintScreen = (base64: string | null) => {
+  const onPrintScreen = (base64: string | undefined) => {
     setScreenshot(base64);
   };
 
@@ -57,20 +65,9 @@ function FeedbackForm({ image, title, typeFeedBack, reset, setDone }: Props) {
       type: typeFeedBack,
       screenshot,
     };
-    const defaultHeader = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-    const appAPI = axios.create({
-      baseURL: 'https://widget-feedback-server-production-6d50.up.railway.app',
-      timeout: 60000,
-    });
     setLoading(true);
-    try {
-      await appAPI.post('/feedback', body, defaultHeader); // await fetch('http://localhost:3333/feedback', {
-    } catch (e) {
-      console.log(e);
+    if (submitCallback) {
+      await submitCallback(body);
     }
     setLoading(false);
     setDone(true);

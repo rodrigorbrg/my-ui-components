@@ -1,1 +1,1 @@
-export { default, FeedbackType } from './feedback_widget';
+export { default, FeedbackType, FeedbackBody } from './feedback_widget';
