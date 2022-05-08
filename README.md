@@ -1,6 +1,12 @@
 # widget-feedback
 
-React Native widget component for feedbacks 
+React Native widget component for feedbacks
+
+## Debug Example
+
+- `yarn example start`: start the Metro server for the example app.
+- `yarn example android`: run the example app on Android.
+- `yarn example ios`: run the example app on iOS.
 
 ## Installation
 
@@ -11,11 +17,11 @@ npm install widget-feedback
 ## Usage
 
 ```js
-import { multiply } from "widget-feedback";
+import { FeedbackWidget } from 'widget-feedback';
 
 // ...
 
-const result = await multiply(3, 7);
+return <FeedbackWidget />;
 ```
 
 ## Contributing
