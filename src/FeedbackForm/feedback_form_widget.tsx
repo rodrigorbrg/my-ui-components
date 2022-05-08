@@ -10,6 +10,7 @@ import {
   TextInputChangeEventData,
 } from 'react-native';
 import { ArrowLeft } from 'phosphor-react-native';
+import axios from 'axios';
 
 import type { FeedbackType } from '../FeedbackWidget';
 import Button from '../Button';
@@ -56,13 +57,18 @@ function FeedbackForm({ image, title, typeFeedBack, reset, setDone }: Props) {
       type: typeFeedBack,
       screenshot,
     };
+    const defaultHeader = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    const appAPI = axios.create({
+      baseURL: 'http://192.168.15.65:3333',
+      timeout: 60000,
+    });
     setLoading(true);
     try {
-      await fetch('http://localhost:3001/feedback', {
-        method: 'POST',
-        body: JSON.stringify(body),
-        // mode: 'no-cors',
-      });
+      await appAPI.post('/feedback', body, defaultHeader); // await fetch('http://localhost:3333/feedback', {
     } catch (e) {
       console.log(e);
     }
