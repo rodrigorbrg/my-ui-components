@@ -3,8 +3,8 @@ import { theme } from '../theme';
 
 export default StyleSheet.create({
   container: {
+    backgroundColor: 'transparent',
     flex: 1,
-    backgroundColor: theme.colors.background,
   },
   button: {
     alignItems: 'center',

@@ -15,6 +15,7 @@ export type FeedbackType = 'BUG' | 'IDEA' | 'OTHER' | null;
 
 export interface FeedbackWidgetProps {
   submitCallback?: (body: any) => Promise<void>;
+  children: React.ReactNode | React.ReactNode[];
 }
 export interface FeedbackBody {
   comment: string;
@@ -22,7 +23,7 @@ export interface FeedbackBody {
   screenshot?: string | undefined;
 }
 
-function FeedbackWidget({ submitCallback }: FeedbackWidgetProps) {
+function FeedbackWidget({ submitCallback, children }: FeedbackWidgetProps) {
   const sheetRef = useRef<BottomSheet>(null);
   const [typeFeedBack, setTypeFeedback] = useState<FeedbackType>(null);
   const [done, setDone] = useState(false);
@@ -45,6 +46,7 @@ function FeedbackWidget({ submitCallback }: FeedbackWidgetProps) {
 
   return (
     <View style={styles.container}>
+      {children}
       <TouchableOpacity
         style={styles.button}
         onPress={handleSheetOpen}
@@ -57,6 +59,7 @@ function FeedbackWidget({ submitCallback }: FeedbackWidgetProps) {
         />
       </TouchableOpacity>
       <BottomSheet
+        index={1}
         ref={sheetRef}
         snapPoints={snapPoints}
         backgroundStyle={styles.modal}
