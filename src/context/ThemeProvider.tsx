@@ -46,7 +46,7 @@ const ThemeProvider = ({
 function useTheme() {
   const context = React.useContext(ThemeContext);
   if (context === undefined) {
-    throw new Error(`useProposal must be used within a ThemeProvider`);
+    throw new Error(`useTheme must be used within a ThemeProvider`);
   }
   return context;
 }

@@ -59,7 +59,7 @@ function FeedbackWidget({ submitCallback, children }: FeedbackWidgetProps) {
         />
       </TouchableOpacity>
       <BottomSheet
-        index={1}
+        index={0}
         ref={sheetRef}
         snapPoints={snapPoints}
         backgroundStyle={styles.modal}
