@@ -4,6 +4,7 @@ import { theme } from '../theme';
 export default StyleSheet.create({
   container: {
     backgroundColor: theme.colors.surface_primary,
+    flex: 1,
   },
   header: {
     flexDirection: 'row',
@@ -43,10 +44,13 @@ export default StyleSheet.create({
     textAlignVertical: 'top',
   },
   footer: {
-    alignItems: 'center',
+    flex: 1,
     flexDirection: 'row',
     marginBottom: 16,
     marginTop: 8,
     paddingHorizontal: 24,
+  },
+  button: {
+    flex: 1,
   },
 });

@@ -30,15 +30,9 @@ export default function Button({
 }) {
   const [textColor, setTextColor] = useState('#FFF');
   const [backgroundColor, setBackgroundColor] = useState(theme.colors.brand);
-  const [borderColor, setborderColor] = useState(theme.colors.brand);
-  const [styleContainer, setStyleContainer] = useState<StyleProp<ViewStyle>>(
-    styles.container
-  );
+  const [borderColor, setBorderColor] = useState(theme.colors.brand);
 
   useEffect(() => {
-    if (style) {
-      setStyleContainer(style);
-    }
     let colorButton = theme.colors.brand;
     switch (color) {
       case 'primary':
@@ -58,26 +52,26 @@ export default function Button({
     switch (mode) {
       case 'full':
         setBackgroundColor(colorButton);
-        setborderColor(colorButton);
+        setBorderColor(colorButton);
         setTextColor('#FFF');
         break;
       case 'outlined':
         setBackgroundColor('transparent');
-        setborderColor(colorButton);
+        setBorderColor(colorButton);
         setTextColor(colorButton);
         break;
       case 'text':
         setBackgroundColor('transparent');
-        setborderColor('transparent');
+        setBorderColor('transparent');
         setTextColor(colorButton);
         break;
       default:
         setBackgroundColor(colorButton);
-        setTextColor(colorButton);
+        setBorderColor(colorButton);
         setTextColor('#FFF');
         break;
     }
-  }, [color, mode, style]);
+  }, [color, mode]);
 
   const styleButton = useCallback(() => {
     return {
@@ -91,7 +85,7 @@ export default function Button({
 
   if (loading) {
     return (
-      <View style={[styleButton(), styleContainer]}>
+      <View style={[styleButton(), styles.container, style]}>
         <ActivityIndicator size="small" color={textColor} />
       </View>
     );
@@ -99,7 +93,7 @@ export default function Button({
 
   return (
     <TouchableOpacity
-      style={[styleButton(), styleContainer]}
+      style={[styleButton(), styles.container, style]}
       onPress={onPress}
       disabled={disabled}
     >
