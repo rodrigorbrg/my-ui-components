@@ -1,5 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { View, TouchableOpacity, ActivityIndicator, Text } from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  ActivityIndicator,
+  Text,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 
 import { theme } from '../theme';
 import styles from './styles';
@@ -9,6 +16,7 @@ export default function Button({
   children,
   color,
   mode,
+  style,
   loading,
   disabled,
 }: {
@@ -16,14 +24,21 @@ export default function Button({
   children: string;
   color?: 'primary' | 'secondary';
   mode?: 'full' | 'outlined' | 'text';
+  style?: StyleProp<ViewStyle>;
   loading?: boolean;
   disabled?: boolean;
 }) {
   const [textColor, setTextColor] = useState('#FFF');
   const [backgroundColor, setBackgroundColor] = useState(theme.colors.brand);
   const [borderColor, setborderColor] = useState(theme.colors.brand);
+  const [styleContainer, setStyleContainer] = useState<StyleProp<ViewStyle>>(
+    styles.container
+  );
 
   useEffect(() => {
+    if (style) {
+      setStyleContainer(style);
+    }
     let colorButton = theme.colors.brand;
     switch (color) {
       case 'primary':
@@ -62,7 +77,7 @@ export default function Button({
         setTextColor('#FFF');
         break;
     }
-  }, [backgroundColor, color, mode]);
+  }, [color, mode, style]);
 
   const styleButton = useCallback(() => {
     return {
@@ -76,7 +91,7 @@ export default function Button({
 
   if (loading) {
     return (
-      <View style={[styles.container, styleButton()]}>
+      <View style={[styleButton(), styleContainer]}>
         <ActivityIndicator size="small" color={textColor} />
       </View>
     );
@@ -84,7 +99,7 @@ export default function Button({
 
   return (
     <TouchableOpacity
-      style={[styles.container, styleButton()]}
+      style={[styleButton(), styleContainer]}
       onPress={onPress}
       disabled={disabled}
     >
