@@ -8,7 +8,7 @@ import {
   ViewStyle,
 } from 'react-native';
 
-import { theme } from '../theme';
+import { theme } from '../../theme';
 import styles from './styles';
 
 export default function Button({

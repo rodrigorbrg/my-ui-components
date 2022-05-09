@@ -7,8 +7,8 @@ import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
 import FeedbackOptions from '../FeedbackOptions';
 import FeedbackForm from '../FeedbackForm';
 import FeedbackSuccess from '../FeedbackSuccess';
-import { feedbackTypes } from '../utils/feedbackTypes';
-import { theme } from '../theme';
+import { feedbackTypes } from '../../../utils/feedbackTypes';
+import { theme } from '../../../theme';
 import styles from './styles';
 
 export type FeedbackType = 'BUG' | 'IDEA' | 'OTHER' | null;

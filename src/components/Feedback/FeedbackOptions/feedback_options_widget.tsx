@@ -1,9 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
-import { Text } from 'react-native';
-const bug = require('../assets/bug.png');
-const idea = require('../assets/idea.png');
-const thought = require('../assets/thought.png');
+import { Text, View } from 'react-native';
+const bug = require('../../../assets/bug.png');
+const idea = require('../../../assets/idea.png');
+const thought = require('../../../assets/thought.png');
 
 import styles from './styles';
 import Option from '../Option';

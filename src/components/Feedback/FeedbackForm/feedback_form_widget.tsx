@@ -13,10 +13,10 @@ import { ArrowLeft } from 'phosphor-react-native';
 
 import type { FeedbackType, FeedbackBody } from '../FeedbackWidget';
 // import { FeedbackBody } from '../FeedbackWidget';
-import Button from '../Button';
+import Button from '../../Button';
 import SnapButton from '../SnapButton';
 import styles from './styles';
-import { theme } from '../theme';
+import { theme } from '../../../theme';
 
 interface Props {
   image: ImageSourcePropType;
