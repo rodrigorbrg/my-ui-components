@@ -31,6 +31,17 @@ export default function Button({
   const [textColor, setTextColor] = useState('#FFF');
   const [backgroundColor, setBackgroundColor] = useState(theme.colors.brand);
   const [borderColor, setBorderColor] = useState(theme.colors.brand);
+  const [opacity, setOpacity] = useState(
+    disabled ? { opacity: 0.5 } : { opacity: 1 }
+  );
+
+  useEffect(() => {
+    if (disabled) {
+      setOpacity({ opacity: 1 });
+    } else {
+      setOpacity({ opacity: 0.5 });
+    }
+  }, [disabled]);
 
   useEffect(() => {
     let colorButton = theme.colors.brand;
@@ -93,7 +104,7 @@ export default function Button({
 
   return (
     <TouchableOpacity
-      style={[styleButton(), styles.container, style]}
+      style={[styleButton(), styles.container, style, opacity]}
       onPress={onPress}
       disabled={disabled}
     >

@@ -107,7 +107,11 @@ function FeedbackForm({
       <View style={styles.footer}>
         <SnapButton screenshot={screenshot} setScreenshot={onPrintScreen} />
         <View style={styles.button}>
-          <Button onPress={submit} loading={loading} disabled={false}>
+          <Button
+            onPress={submit}
+            loading={loading}
+            disabled={feedback.length < 2}
+          >
             Enviar feedback
           </Button>
         </View>
