@@ -26,7 +26,6 @@ export default function App() {
     <View style={styles.container}>
       <FeedbackWidget submitCallback={submit}>
         <Button style={styles.button}>{'Button 1'}</Button>
-        <Button>{'Button 2'}</Button>
       </FeedbackWidget>
     </View>
   );
