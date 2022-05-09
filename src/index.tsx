@@ -3,5 +3,13 @@ import FeedbackWidget, {
   FeedbackType,
 } from './components/Feedback/FeedbackWidget';
 import Button from './components/Button';
+import { ThemeProvider, useTheme } from './context/ThemeProvider';
 
-export { FeedbackWidget, FeedbackBody, FeedbackType, Button };
+export {
+  ThemeProvider,
+  useTheme,
+  FeedbackWidget,
+  FeedbackBody,
+  FeedbackType,
+  Button,
+};

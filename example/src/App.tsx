@@ -2,7 +2,12 @@ import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import axios from 'axios';
 
-import { FeedbackWidget, FeedbackBody, Button } from 'widget-feedback';
+import {
+  ThemeProvider,
+  FeedbackWidget,
+  FeedbackBody,
+  Button,
+} from 'widget-feedback';
 
 export default function App() {
   const submit = async (body: FeedbackBody) => {
@@ -23,13 +28,15 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
-      <FeedbackWidget submitCallback={submit}>
-        <Button onPress={() => {}} style={styles.button}>
-          {'Button 1'}
-        </Button>
-      </FeedbackWidget>
-    </View>
+    <ThemeProvider>
+      <View style={styles.container}>
+        <FeedbackWidget submitCallback={submit}>
+          <Button onPress={() => {}} style={styles.button}>
+            {'Button 1'}
+          </Button>
+        </FeedbackWidget>
+      </View>
+    </ThemeProvider>
   );
 }
 

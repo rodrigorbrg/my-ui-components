@@ -12,9 +12,8 @@ export const theme = {
 
     stroke: '#52525B',
   },
-
-  fonts: {
-    regular: 'Inter_400Regular',
-    medium: 'Inter_500Medium',
-  },
+  // fonts: {
+  //   regular: 'Inter_400Regular',
+  //   medium: 'Inter_500Medium',
+  // },
 };
