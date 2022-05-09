@@ -25,7 +25,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <FeedbackWidget submitCallback={submit}>
-        <Button style={styles.button}>{'Button 1'}</Button>
+        <Button onPress={() => {}} style={styles.button}>
+          {'Button 1'}
+        </Button>
       </FeedbackWidget>
     </View>
   );

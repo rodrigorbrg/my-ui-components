@@ -20,7 +20,7 @@ export default function Button({
   loading,
   disabled,
 }: {
-  onPress?: () => void;
+  onPress: () => void;
   children: string;
   color?: 'primary' | 'secondary';
   mode?: 'full' | 'outlined' | 'text';
