@@ -1,12 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { theme } from '../../../theme';
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: theme.colors.surface_primary,
+    // backgroundColor: theme.colors.surface_primary,
   },
   title: {
-    color: theme.colors.text_primary,
     fontSize: 20,
     textAlign: 'center',
     marginBottom: 32,

@@ -1,10 +1,8 @@
 import { StyleSheet } from 'react-native';
-import { theme } from '../../../theme';
 
 export default StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: theme.colors.surface_secondary,
     borderRadius: 8,
     height: 112,
     justifyContent: 'center',
@@ -19,6 +17,5 @@ export default StyleSheet.create({
   title: {
     fontSize: 14,
     marginTop: 8,
-    color: theme.colors.text_primary,
   },
 });

@@ -8,14 +8,15 @@ import {
   ViewStyle,
 } from 'react-native';
 
-import { theme } from '../../theme';
+import { withTheme, Theme } from '../../context/ThemeProvider';
 import styles from './styles';
 
-export default function Button({
+function Button({
   onPress,
   children,
   color,
   mode,
+  theme,
   style,
   loading,
   disabled,
@@ -24,6 +25,7 @@ export default function Button({
   children: string;
   color?: 'primary' | 'secondary';
   mode?: 'full' | 'outlined' | 'text';
+  theme: Theme;
   style?: StyleProp<ViewStyle>;
   loading?: boolean;
   disabled?: boolean;
@@ -82,7 +84,7 @@ export default function Button({
         setTextColor('#FFF');
         break;
     }
-  }, [color, mode]);
+  }, [color, mode, theme]);
 
   const styleButton = useCallback(() => {
     return {
@@ -112,3 +114,5 @@ export default function Button({
     </TouchableOpacity>
   );
 }
+
+export default withTheme(Button);

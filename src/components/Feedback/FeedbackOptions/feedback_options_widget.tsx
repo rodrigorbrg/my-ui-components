@@ -4,22 +4,26 @@ const bug = require('../../../assets/bug.png');
 const idea = require('../../../assets/idea.png');
 const thought = require('../../../assets/thought.png');
 
-import styles from './styles';
 import Option from '../Option';
 import type { FeedbackType } from '../FeedbackWidget';
+import { withTheme, Theme } from '../../../context/ThemeProvider';
+import styles from './styles';
 
 interface Props {
+  theme: Theme;
   setOptionFeedback: (type: FeedbackType) => void;
 }
 
-function FeedbackOptions({ setOptionFeedback }: Props) {
+function FeedbackOptions({ theme, setOptionFeedback }: Props) {
   const onPress = (type: FeedbackType) => {
     setOptionFeedback(type);
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{'Deixe seu feedback'}</Text>
+    <View style={{ backgroundColor: theme.colors.surface_primary }}>
+      <Text style={[styles.title, { color: theme.colors.text_primary }]}>
+        {'Deixe seu feedback'}
+      </Text>
       <View style={styles.feedbackTypes}>
         <Option
           onPress={() => {
@@ -46,4 +50,4 @@ function FeedbackOptions({ setOptionFeedback }: Props) {
     </View>
   );
 }
-export default FeedbackOptions;
+export default withTheme(FeedbackOptions);

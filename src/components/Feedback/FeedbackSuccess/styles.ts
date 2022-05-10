@@ -1,10 +1,9 @@
 import { StyleSheet } from 'react-native';
-import { theme } from '../../../theme';
 
 export default StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: theme.colors.surface_primary,
+    // backgroundColor: theme.colors.surface_primary,
     justifyContent: 'center',
   },
   image: {
@@ -14,14 +13,12 @@ export default StyleSheet.create({
     marginBottom: 10,
   },
   title: {
-    color: theme.colors.text_primary,
     fontSize: 20,
     textAlign: 'center',
     marginBottom: 24,
   },
   button: {
     alignItems: 'center',
-    backgroundColor: theme.colors.surface_secondary,
     borderRadius: 8,
     height: 40,
     justifyContent: 'center',
@@ -29,7 +26,6 @@ export default StyleSheet.create({
     paddingHorizontal: 24,
   },
   buttonTitle: {
-    color: theme.colors.text_primary,
     fontSize: 14,
     textAlign: 'center',
   },

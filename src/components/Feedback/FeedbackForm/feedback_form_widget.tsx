@@ -16,9 +16,10 @@ import type { FeedbackType, FeedbackBody } from '../FeedbackWidget';
 import Button from '../../Button';
 import SnapButton from '../SnapButton';
 import styles from './styles';
-import { theme } from '../../../theme';
+import { withTheme, Theme } from '../../../context/ThemeProvider';
 
 interface Props {
+  theme: Theme;
   image: ImageSourcePropType;
   title: string;
   typeFeedBack: FeedbackType;
@@ -28,6 +29,7 @@ interface Props {
 }
 
 function FeedbackForm({
+  theme,
   image,
   title,
   typeFeedBack,
@@ -39,6 +41,8 @@ function FeedbackForm({
   const [screenshot, setScreenshot] = useState<string | undefined>();
   const [loading, setLoading] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
+
+  const { colors } = theme;
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -74,25 +78,25 @@ function FeedbackForm({
   };
 
   return (
-    <View style={styles.container}>
+    <View
+      style={[styles.container, { backgroundColor: colors.surface_primary }]}
+    >
       <View style={styles.header}>
         <TouchableOpacity style={styles.arrow} onPress={reset}>
-          <ArrowLeft
-            color={theme.colors.text_secondary}
-            size={24}
-            weight={'bold'}
-          />
+          <ArrowLeft color={colors.text_secondary} size={24} weight={'bold'} />
         </TouchableOpacity>
         <View style={styles.titleContainer}>
           <Image source={image} style={styles.image} />
-          <Text style={styles.title}>{title}</Text>
+          <Text style={[styles.title, { color: colors.text_primary }]}>
+            {title}
+          </Text>
         </View>
         <View />
       </View>
       <TextInput
         multiline={true}
         numberOfLines={5}
-        placeholderTextColor={theme.colors.text_secondary}
+        placeholderTextColor={colors.text_secondary}
         value={feedback}
         onChange={onChange}
         onFocus={handleFocus}
@@ -100,7 +104,9 @@ function FeedbackForm({
         style={[
           styles.form,
           {
-            borderColor: isFocused ? theme.colors.brand : theme.colors.stroke,
+            backgroundColor: colors.surface_primary,
+            borderColor: isFocused ? colors.brand : colors.stroke,
+            color: colors.text_primary,
           },
         ]}
       />
@@ -119,4 +125,4 @@ function FeedbackForm({
     </View>
   );
 }
-export default FeedbackForm;
+export default withTheme(FeedbackForm);

@@ -1,15 +1,12 @@
-import FeedbackWidget, {
-  FeedbackBody,
-  FeedbackType,
-} from './components/Feedback/FeedbackWidget';
-import Button from './components/Button';
-import { ThemeProvider, useTheme } from './context/ThemeProvider';
+export { default as FeedbackWidget } from './components/Feedback/FeedbackWidget';
+export { FeedbackBody } from './components/Feedback/FeedbackWidget';
+export type { FeedbackType } from './components/Feedback/FeedbackWidget';
+
+export { default as Button } from './components/Button';
 
 export {
   ThemeProvider,
+  Theme,
+  withTheme,
   useTheme,
-  FeedbackWidget,
-  FeedbackBody,
-  FeedbackType,
-  Button,
-};
+} from './context/ThemeProvider';

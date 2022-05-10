@@ -8,12 +8,14 @@ import FeedbackOptions from '../FeedbackOptions';
 import FeedbackForm from '../FeedbackForm';
 import FeedbackSuccess from '../FeedbackSuccess';
 import { feedbackTypes } from '../../../utils/feedbackTypes';
-import { theme } from '../../../theme';
+
+import { withTheme, Theme } from '../../../context/ThemeProvider';
 import styles from './styles';
 
 export type FeedbackType = 'BUG' | 'IDEA' | 'OTHER' | null;
 
 export interface FeedbackWidgetProps {
+  theme: Theme;
   submitCallback?: (body: any) => Promise<void>;
   children: React.ReactNode | React.ReactNode[];
 }
@@ -23,7 +25,11 @@ export interface FeedbackBody {
   screenshot?: string | undefined;
 }
 
-function FeedbackWidget({ submitCallback, children }: FeedbackWidgetProps) {
+function FeedbackWidget({
+  theme,
+  submitCallback,
+  children,
+}: FeedbackWidgetProps) {
   const sheetRef = useRef<BottomSheet>(null);
   const [typeFeedBack, setTypeFeedback] = useState<FeedbackType>(null);
   const [done, setDone] = useState(false);
@@ -48,7 +54,7 @@ function FeedbackWidget({ submitCallback, children }: FeedbackWidgetProps) {
     <View style={styles.container}>
       {children}
       <TouchableOpacity
-        style={styles.button}
+        style={[styles.button, { backgroundColor: theme.colors.brand }]}
         onPress={handleSheetOpen}
         activeOpacity={0.8}
       >
@@ -62,8 +68,14 @@ function FeedbackWidget({ submitCallback, children }: FeedbackWidgetProps) {
         index={0}
         ref={sheetRef}
         snapPoints={snapPoints}
-        backgroundStyle={styles.modal}
-        handleIndicatorStyle={styles.handle}
+        backgroundStyle={[
+          styles.modal,
+          { backgroundColor: theme.colors.surface_primary },
+        ]}
+        handleIndicatorStyle={[
+          styles.handle,
+          { backgroundColor: theme.colors.text_secondary },
+        ]}
       >
         {!typeFeedBack ? (
           <FeedbackOptions setOptionFeedback={setOptionFeedback} />
@@ -86,4 +98,4 @@ function FeedbackWidget({ submitCallback, children }: FeedbackWidgetProps) {
   );
 }
 
-export default gestureHandlerRootHOC(FeedbackWidget);
+export default gestureHandlerRootHOC(withTheme(FeedbackWidget));

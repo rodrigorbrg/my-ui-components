@@ -3,15 +3,16 @@ import { Image, TouchableOpacity } from 'react-native';
 import { Camera, Trash } from 'phosphor-react-native';
 import { captureScreen } from 'react-native-view-shot';
 
+import { withTheme, Theme } from '../../../context/ThemeProvider';
 import styles from './styles';
-import { theme } from '../../../theme';
 
 interface Props {
+  theme: Theme;
   screenshot?: string | null;
   setScreenshot: (base64: string | undefined) => void;
 }
 
-function SnapButton({ screenshot, setScreenshot }: Props) {
+function SnapButton({ theme, screenshot, setScreenshot }: Props) {
   const snap = async () => {
     if (!screenshot) {
       const base64 = await captureScreen({
@@ -25,7 +26,13 @@ function SnapButton({ screenshot, setScreenshot }: Props) {
     }
   };
   return (
-    <TouchableOpacity onPress={snap} style={styles.container}>
+    <TouchableOpacity
+      onPress={snap}
+      style={[
+        styles.container,
+        { backgroundColor: theme.colors.surface_secondary },
+      ]}
+    >
       <Image
         source={{
           uri: `${screenshot}`,
@@ -48,4 +55,4 @@ function SnapButton({ screenshot, setScreenshot }: Props) {
     </TouchableOpacity>
   );
 }
-export default SnapButton;
+export default withTheme(SnapButton);

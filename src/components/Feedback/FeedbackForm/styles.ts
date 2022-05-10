@@ -1,9 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { theme } from '../../../theme';
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: theme.colors.surface_primary,
     flex: 1,
   },
   header: {
@@ -25,17 +23,13 @@ export default StyleSheet.create({
     width: 24,
   },
   title: {
-    color: theme.colors.text_primary,
     fontSize: 18,
     textAlign: 'center',
     marginHorizontal: 8,
   },
   form: {
-    backgroundColor: theme.colors.surface_primary,
     borderWidth: 1,
-    borderColor: theme.colors.stroke,
     borderRadius: 4,
-    color: theme.colors.text_primary,
     fontSize: 14,
     height: 112,
     marginBottom: 8,

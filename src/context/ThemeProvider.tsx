@@ -1,8 +1,10 @@
-import React from 'react';
-
+import {
+  createTheming,
+  type ThemingType,
+} from '@callstack/react-theme-provider';
 import { theme } from '../theme';
 
-export interface Theme {
+export type Theme = {
   colors: {
     brand: string;
     background: string;
@@ -13,42 +15,7 @@ export interface Theme {
     text_on_brand_color: string;
     stroke: string;
   };
-}
-// export interface ThemeContextInterface {
-//   theme: Theme;
-//   setTheme: React.Dispatch<React.SetStateAction<Theme>>;
-// }
-
-const ThemeContext = React.createContext<Theme | undefined>(theme);
-
-const ThemeProvider = ({
-  children,
-  defaultTheme,
-}: {
-  children: React.ReactNode;
-  defaultTheme?: Theme;
-}) => {
-  // const [theme, setTheme] = useState<Theme>(defaultTheme);
-
-  // const defaultValue: ThemeContextInterface = useMemo(
-  //   () => ({
-  //     theme,
-  //     setTheme,
-  //   }),
-  //   [theme, setTheme]
-  // );
-
-  return (
-    <ThemeContext.Provider value={defaultTheme}>{children}</ThemeContext.Provider>
-  );
 };
 
-function useTheme() {
-  const context = React.useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error(`useTheme must be used within a ThemeProvider`);
-  }
-  return context;
-}
-
-export { ThemeProvider, useTheme };
+export const { ThemeProvider, withTheme, useTheme }: ThemingType<Theme> =
+  createTheming<Theme>(theme);
