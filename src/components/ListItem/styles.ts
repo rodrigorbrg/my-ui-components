@@ -2,11 +2,13 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    borderBottomWidth: 1,
-    flex: 1,
-    height: 50,
     alignItems: 'center',
+    borderBottomWidth: 1,
+    elevation: 4,
+    flex: 1,
     flexDirection: 'row',
+    height: 50,
+    marginVertical: 1,
     paddingHorizontal: 16,
   },
   avatar: {
