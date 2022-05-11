@@ -28,7 +28,7 @@ function Option({ theme, onPress, image, title, ...rest }: Props) {
       {...rest}
     >
       <Image source={image} style={styles.image} />
-      <Text style={[styles.title, { color: theme.colors.text_primary }]}>
+      <Text style={[styles.title, { color: theme.colors.text_on_surface }]}>
         {title}
       </Text>
     </TouchableOpacity>

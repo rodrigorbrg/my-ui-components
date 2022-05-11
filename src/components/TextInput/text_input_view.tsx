@@ -68,15 +68,15 @@ function TextInput({
       multiline={multiline}
       numberOfLines={numberOfLines}
       placeholder={placeholder}
-      placeholderTextColor={colors.text_secondary}
+      placeholderTextColor={colors.text_on_surface}
       onFocus={handleFocus}
       onBlur={handleBlur}
       style={[
         styles.text,
         // eslint-disable-next-line react-native/no-inline-styles
         {
-          borderColor: isFocused ? colors.primary : colors.stroke,
-          color: colors.text_primary,
+          borderColor: isFocused ? colors.primary : colors.surface_secondary,
+          color: colors.text_on_background,
           textAlignVertical: multiline ? 'top' : 'center',
         },
         styleButton(),

@@ -87,7 +87,7 @@ function FeedbackForm({
         </TouchableOpacity>
         <View style={styles.titleContainer}>
           <Image source={image} style={styles.image} />
-          <Text style={[styles.title, { color: colors.text_primary }]}>
+          <Text style={[styles.title, { color: colors.text_on_background }]}>
             {title}
           </Text>
         </View>
@@ -96,7 +96,7 @@ function FeedbackForm({
       <TextInput
         multiline={true}
         numberOfLines={5}
-        placeholderTextColor={colors.text_secondary}
+        placeholderTextColor={colors.text_on_surface}
         value={feedback}
         onChange={onChange}
         onFocus={handleFocus}
@@ -106,7 +106,7 @@ function FeedbackForm({
           {
             backgroundColor: colors.surface_primary,
             borderColor: isFocused ? colors.primary : colors.stroke,
-            color: colors.text_primary,
+            color: colors.text_on_background,
           },
         ]}
       />

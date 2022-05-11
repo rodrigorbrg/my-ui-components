@@ -17,7 +17,7 @@ function FeedbackSuccess({
         source={require('../../../assets/success.png')}
         style={styles.image}
       />
-      <Text style={[styles.title, { color: theme.colors.text_primary }]}>
+      <Text style={[styles.title, { color: theme.colors.text_on_background }]}>
         {'Agradecemos o feedback!'}
       </Text>
       <TouchableOpacity
@@ -28,7 +28,10 @@ function FeedbackSuccess({
         onPress={reset}
       >
         <Text
-          style={[styles.buttonTitle, { color: theme.colors.text_primary }]}
+          style={[
+            styles.buttonTitle,
+            { color: theme.colors.text_on_background },
+          ]}
         >
           {'Quero enviar outro'}
         </Text>

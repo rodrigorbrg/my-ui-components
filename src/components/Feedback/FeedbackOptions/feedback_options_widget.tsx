@@ -21,7 +21,7 @@ function FeedbackOptions({ theme, setOptionFeedback }: Props) {
 
   return (
     <View style={{ backgroundColor: theme.colors.surface_primary }}>
-      <Text style={[styles.title, { color: theme.colors.text_primary }]}>
+      <Text style={[styles.title, { color: theme.colors.text_on_surface }]}>
         {'Deixe seu feedback'}
       </Text>
       <View style={styles.feedbackTypes}>

@@ -25,7 +25,7 @@ function ListItem({
         styles.container,
         {
           backgroundColor: colors.surface_primary,
-          borderColor: colors.text_on_surface,
+          borderColor: colors.surface_secondary,
         },
       ]}
     >
@@ -34,7 +34,7 @@ function ListItem({
       >
         <MusicNote color={colors.primary} size={24} />
       </View>
-      <Text style={[styles.genre, { color: colors.text_primary }]}>
+      <Text style={[styles.genre, { color: colors.text_on_surface }]}>
         {genre}
       </Text>
       <ArrowRight color={colors.primary_variant} weight={'light'} size={24} />
