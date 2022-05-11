@@ -10,12 +10,12 @@ export const theme = {
     surface_primary: '#18181B',
     surface_secondary: '#27272A',
 
-    error: '#ff0000',
+    error: '#E53935',
 
-    text_primary: '#F4F4F5',
-    text_secondary: '#A1A1AA',
-    text_on_background: '#A1A1AA',
-    text_on_surface: 'FFFFFF',
+    text_primary: '#FFFFFF',
+    text_secondary: '#F4F4F5',
+    text_on_background: '#FFFFFF',
+    text_on_surface: '#FFFFFF',
     text_on_brand_color: '#FFFFFF',
     text_on_error: '#FFFFFF',
 
