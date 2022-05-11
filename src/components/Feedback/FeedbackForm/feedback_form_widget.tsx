@@ -105,7 +105,7 @@ function FeedbackForm({
           styles.form,
           {
             backgroundColor: colors.surface_primary,
-            borderColor: isFocused ? colors.brand : colors.stroke,
+            borderColor: isFocused ? colors.primary : colors.stroke,
             color: colors.text_primary,
           },
         ]}

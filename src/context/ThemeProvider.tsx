@@ -6,13 +6,20 @@ import { theme } from '../theme';
 
 export type Theme = {
   colors: {
-    brand: string;
+    primary: string;
+    primary_variant: string;
+    secondary: string;
+    secondary_variant: string;
     background: string;
     surface_primary: string;
     surface_secondary: string;
+    error: string;
     text_primary: string;
     text_secondary: string;
+    text_on_background: string;
+    text_on_surface: string;
     text_on_brand_color: string;
+    text_on_error: string;
     stroke: string;
   };
 };

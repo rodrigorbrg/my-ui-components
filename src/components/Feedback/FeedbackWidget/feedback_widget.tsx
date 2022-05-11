@@ -54,7 +54,7 @@ function FeedbackWidget({
     <View style={styles.container}>
       {children}
       <TouchableOpacity
-        style={[styles.button, { backgroundColor: theme.colors.brand }]}
+        style={[styles.button, { backgroundColor: theme.colors.primary }]}
         onPress={handleSheetOpen}
         activeOpacity={0.8}
       >

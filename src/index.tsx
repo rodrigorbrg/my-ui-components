@@ -4,6 +4,7 @@ export type { FeedbackType } from './components/Feedback/FeedbackWidget';
 
 export { default as Button } from './components/Button';
 export { default as TextInput } from './components/TextInput';
+export { default as ListItem } from './components/ListItem';
 
 export {
   ThemeProvider,

@@ -6,7 +6,8 @@ export default StyleSheet.create({
     paddingHorizontal: 8,
   },
   text: {
-    fontSize: 12,
+    fontSize: 14,
+    fontWeight: '500',
     textAlign: 'center',
   },
 });

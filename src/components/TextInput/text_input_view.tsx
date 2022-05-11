@@ -73,8 +73,9 @@ function TextInput({
       onBlur={handleBlur}
       style={[
         styles.text,
+        // eslint-disable-next-line react-native/no-inline-styles
         {
-          borderColor: isFocused ? colors.brand : colors.stroke,
+          borderColor: isFocused ? colors.primary : colors.stroke,
           color: colors.text_primary,
           textAlignVertical: multiline ? 'top' : 'center',
         },

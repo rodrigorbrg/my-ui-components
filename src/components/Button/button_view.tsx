@@ -31,8 +31,8 @@ function Button({
   disabled?: boolean;
 }) {
   const [textColor, setTextColor] = useState('#FFF');
-  const [backgroundColor, setBackgroundColor] = useState(theme.colors.brand);
-  const [borderColor, setBorderColor] = useState(theme.colors.brand);
+  const [backgroundColor, setBackgroundColor] = useState(theme.colors.primary);
+  const [borderColor, setBorderColor] = useState(theme.colors.primary);
   const [opacity, setOpacity] = useState(
     disabled ? { opacity: 0.5 } : { opacity: 1 }
   );
@@ -46,10 +46,10 @@ function Button({
   }, [disabled]);
 
   useEffect(() => {
-    let colorButton = theme.colors.brand;
+    let colorButton = theme.colors.primary;
     switch (color) {
       case 'primary':
-        colorButton = theme.colors.brand;
+        colorButton = theme.colors.primary;
         setBackgroundColor(colorButton);
         break;
       case 'secondary':
@@ -57,7 +57,7 @@ function Button({
         setBackgroundColor(colorButton);
         break;
       default:
-        colorButton = theme.colors.brand;
+        colorButton = theme.colors.primary;
         setBackgroundColor(colorButton);
         break;
     }
