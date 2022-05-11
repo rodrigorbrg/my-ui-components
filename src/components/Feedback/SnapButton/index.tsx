@@ -13,6 +13,7 @@ interface Props {
 }
 
 function SnapButton({ theme, screenshot, setScreenshot }: Props) {
+  const { colors } = theme;
   const snap = async () => {
     if (!screenshot) {
       const base64 = await captureScreen({
@@ -28,10 +29,7 @@ function SnapButton({ theme, screenshot, setScreenshot }: Props) {
   return (
     <TouchableOpacity
       onPress={snap}
-      style={[
-        styles.container,
-        { backgroundColor: theme.colors.surface_secondary },
-      ]}
+      style={[styles.container, { backgroundColor: colors.surface_primary }]}
     >
       <Image
         source={{
@@ -41,16 +39,12 @@ function SnapButton({ theme, screenshot, setScreenshot }: Props) {
       />
       {!screenshot ? (
         <Camera
-          color={theme.colors.text_primary}
+          color={colors.text_on_surface}
           size={24}
           style={styles.camera}
         />
       ) : (
-        <Trash
-          color={theme.colors.text_primary}
-          size={24}
-          style={styles.trash}
-        />
+        <Trash color={colors.text_on_surface} size={24} style={styles.trash} />
       )}
     </TouchableOpacity>
   );
