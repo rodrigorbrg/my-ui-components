@@ -10,6 +10,7 @@ import {
   Button,
   TextInput,
   ListItem,
+  Searchbar,
 } from 'widget-feedback';
 
 function App({ theme }: { theme: Theme }) {
@@ -53,14 +54,15 @@ function App({ theme }: { theme: Theme }) {
       style={[styles.container, { backgroundColor: theme.colors.background }]}
     >
       <FeedbackWidget submitCallback={submit}>
-        <TextInput
+        {/* <TextInput
           value={text}
           placeholder={'Insira o texto'}
           mode={'outlined'}
           // eslint-disable-next-line react-native/no-inline-styles
           style={{ marginVertical: 10, marginHorizontal: 20 }}
           onChangeText={(value: string) => setText(value)}
-        />
+        /> */}
+        <Searchbar value={text} onChange={(value: string) => setText(value)} />
         <Button onPress={() => {}} style={styles.button}>
           {'Button 1'}
         </Button>
