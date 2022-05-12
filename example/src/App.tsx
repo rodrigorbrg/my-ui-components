@@ -1,72 +1,41 @@
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
-import axios from 'axios';
+import { NavigationContainer } from '@react-navigation/native';
+import { ThemeProvider, Theme } from 'widget-feedback';
 
-import {
-  ThemeProvider,
-  Theme,
-  FeedbackWidget,
-  FeedbackBody,
-  Button,
-} from 'widget-feedback';
+import Navigator from './navigation/Navigator';
+
+const theme: Theme = {
+  colors: {
+    primary: '#29b6f6',
+    primary_variant: '#4FC2F7',
+    secondary: '#F66A29',
+    secondary_variant: '#F77E49',
+
+    background: '#FFF',
+
+    surface_primary: '#F9F9F9',
+    surface_secondary: '#E8E8E8',
+    //  surface_primary: '#18181B',
+    //  surface_secondary: '#27272A',
+    error: '#E53935',
+
+    text_on_brand_color: '#fff',
+    text_primary: '#fff',
+    text_secondary: '#A1A1AA',
+    text_on_background: '#222',
+    text_on_surface: '#444',
+    text_on_error: '#FFFFFF',
+
+    stroke: '#52525B',
+  },
+};
 
 export default function App() {
-  const submit = async (body: FeedbackBody) => {
-    const defaultHeader = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-    const appAPI = axios.create({
-      baseURL: 'https://widget-feedback-server-production-6d50.up.railway.app',
-      timeout: 60000,
-    });
-    try {
-      await appAPI.post('/feedback', body, defaultHeader); // await fetch('http://localhost:3333/feedback', {
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  const theme: Theme = {
-    colors: {
-      brand: '#825700',
-      background: '#09090A',
-
-      surface_primary: '#18181B',
-      surface_secondary: '#27272A',
-
-      text_primary: '#F4F4F5',
-      text_secondary: '#A1A1AA',
-      text_on_brand_color: '#FFFFFF',
-
-      stroke: '#52525B',
-    },
-  };
-
   return (
-    <ThemeProvider theme={theme}>
-      <View style={styles.container}>
-        <FeedbackWidget submitCallback={submit}>
-          <Button onPress={() => {}} style={styles.button}>
-            {'Button 1'}
-          </Button>
-        </FeedbackWidget>
-      </View>
-    </ThemeProvider>
+    <NavigationContainer>
+      <ThemeProvider theme={theme}>
+        <Navigator />
+      </ThemeProvider>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#333',
-  },
-  button: {
-    // alignItems: 'center',
-    height: 40,
-    justifyContent: 'center',
-    paddingHorizontal: 8,
-    marginHorizontal: 20,
-  },
-});
