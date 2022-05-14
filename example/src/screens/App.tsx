@@ -56,17 +56,17 @@ function App({ theme }: { theme: Theme }) {
       <FeedbackWidget submitCallback={submit}>
         <TextInput
           value={text}
+          onChangeText={(value: string) => setText(value)}
           placeholder={'Insira o texto'}
           mode={'outlined'}
           // eslint-disable-next-line react-native/no-inline-styles
           style={{ marginVertical: 10, marginHorizontal: 20 }}
-          onChangeText={(value: string) => setText(value)}
         />
         <Searchbar
-          // eslint-disable-next-line react-native/no-inline-styles
-          style={{ marginVertical: 10, marginHorizontal: 20 }}
           value={text}
           onChange={(value: string) => setText(value)}
+          // eslint-disable-next-line react-native/no-inline-styles
+          style={{ marginVertical: 10, marginHorizontal: 20 }}
         />
         <Button onPress={() => {}} style={styles.button}>
           {'Button 1'}
