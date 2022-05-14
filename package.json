@@ -28,14 +28,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rodrigorbrg/my-ui-components-react-native.git"
+    "url": "git+https://github.com/rodrigorbrg/my-ui-components.git"
   },
   "author": "Rodrigo Gomes <rodrigorbrg@gmail.com> (https://github.com/rodrigorbrg)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rodrigorbrg/my-ui-components-react-native./issues"
+    "url": "https://github.com/rodrigorbrg/my-ui-components./issues"
   },
-  "homepage": "https://github.com/rodrigorbrg/my-ui-components-react-native.#readme",
+  "homepage": "https://github.com/rodrigorbrg/my-ui-components.#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
