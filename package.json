@@ -1,5 +1,5 @@
 {
-  "name": "my-ui-components",
+  "name": "@rodrigorbrg/my-ui-components",
   "version": "0.1.0",
   "description": "React Native widget component for feedbacks ",
   "main": "lib/commonjs/index",
@@ -152,6 +152,7 @@
     ]
   },
   "directories": {
+    "example": "example",
     "lib": "lib"
   }
 }
