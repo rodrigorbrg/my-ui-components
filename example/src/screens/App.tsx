@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
 import axios from 'axios';
+import { BASE_URL_API } from 'react-native-dotenv';
 
 import {
   Theme,
@@ -23,8 +24,7 @@ function App({ theme }: { theme: Theme }) {
       },
     };
     const appAPI = axios.create({
-      baseURL:
-        'https://@rodrigorbrg/my-ui-components-server-production-6d50.up.railway.app',
+      baseURL: BASE_URL_API,
       timeout: 60000,
     });
     try {
