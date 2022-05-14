@@ -34,7 +34,6 @@
   },
   "homepage": "https://github.com/rodrigorbrg/my-ui-components-react-native.#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
   "devDependencies": {
