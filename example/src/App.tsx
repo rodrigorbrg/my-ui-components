@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { ThemeProvider, Theme } from 'widget-feedback';
+import { ThemeProvider, Theme } from '@rodrigorbrg/my-ui-components';
 
 import Navigator from './navigation/Navigator';
 

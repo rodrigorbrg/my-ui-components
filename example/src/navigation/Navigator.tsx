@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Theme, withTheme } from 'widget-feedback';
+import { Theme, withTheme } from '@rodrigorbrg/my-ui-components';
 import { FileSearch, House, Person } from 'phosphor-react-native';
 
 import App from '../screens/App';

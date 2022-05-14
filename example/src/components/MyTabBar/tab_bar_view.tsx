@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
-import { Theme, withTheme } from 'widget-feedback';
+import { Theme, withTheme } from '@rodrigorbrg/my-ui-components';
 
 import styles from './styles';
 

@@ -1,6 +1,6 @@
 {
-  "name": "widget-feedback-example",
-  "description": "Example app for widget-feedback",
+  "name": "@rodrigorbrg/my-ui-components-example",
+  "description": "Example app for @rodrigorbrg/my-ui-components",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -23,7 +23,7 @@
     "react-native-svg": "^12.3.0",
     "react-native-view-shot": "^3.1.2",
     "react-navigation": "^4.4.4",
-    "widget-feedback": "../"
+    "@rodrigorbrg/my-ui-components": "../"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

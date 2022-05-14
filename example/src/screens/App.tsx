@@ -11,7 +11,7 @@ import {
   TextInput,
   ListItem,
   Searchbar,
-} from 'widget-feedback';
+} from '@rodrigorbrg/my-ui-components';
 
 function App({ theme }: { theme: Theme }) {
   const [text, setText] = React.useState('');
@@ -23,7 +23,8 @@ function App({ theme }: { theme: Theme }) {
       },
     };
     const appAPI = axios.create({
-      baseURL: 'https://widget-feedback-server-production-6d50.up.railway.app',
+      baseURL:
+        'https://@rodrigorbrg/my-ui-components-server-production-6d50.up.railway.app',
       timeout: 60000,
     });
     try {

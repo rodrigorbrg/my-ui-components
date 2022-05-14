@@ -4814,7 +4814,7 @@ which@^1.2.9:
   dependencies:
     isexe "^2.0.0"
 
-widget-feedback@../:
+@rodrigorbrg/my-ui-components@../:
   version "0.1.0"
   dependencies:
     "@callstack/react-theme-provider" "^3.0.7"
