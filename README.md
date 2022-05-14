@@ -11,7 +11,16 @@ React Native widget component for feedbacks
 ## Installation
 
 ```sh
-npm install @rodrigorbrg/my-ui-components
+npm install @rodrigorbrg/my-ui-components react-native-gesture-handler react-native-reanimated react-native-view-shot
+```
+
+Add on babel.config.js
+
+```sh
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: ['react-native-reanimated/plugin'],
+};
 ```
 
 ## Usage
