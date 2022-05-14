@@ -1,4 +1,4 @@
-# widget-feedback
+# @rodrigorbrg/my-ui-components
 
 React Native widget component for feedbacks
 

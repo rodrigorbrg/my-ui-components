@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "widget-feedback": ["./src/index"]
+      "@rodrigorbrg/my-ui-components": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
