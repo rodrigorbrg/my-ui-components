@@ -23,5 +23,6 @@
     "strict": true,
     "target": "esnext"
   },
+  "typeRoots": ["./src/types"],
   "include": ["src"]
 }
