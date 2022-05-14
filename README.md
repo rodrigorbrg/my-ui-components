@@ -11,17 +11,29 @@ React Native widget component for feedbacks
 ## Installation
 
 ```sh
-npm install widget-feedback
+npm install @rodrigorbrg/my-ui-components
 ```
 
 ## Usage
 
 ```js
-import { FeedbackWidget } from 'widget-feedback';
+import { FeedbackWidget } from '@rodrigorbrg/my-ui-components';
 
 // ...
 
 return <FeedbackWidget />;
+```
+
+```js
+import { ThemeProvider, Theme } from '@rodrigorbrg/my-ui-components';
+
+// ...
+
+return (
+  <ThemeProvider theme={theme}>
+    <Navigator />
+  </ThemeProvider>
+);
 ```
 
 ## Contributing
