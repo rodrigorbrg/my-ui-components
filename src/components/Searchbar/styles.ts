@@ -14,6 +14,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     flex: 1,
     padding: 12,
-    marginHorizontal: 8,
+    paddingStart: -8,
   },
 });
