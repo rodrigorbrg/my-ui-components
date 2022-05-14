@@ -29,7 +29,7 @@ function SnapButton({ theme, screenshot, setScreenshot }: Props) {
   return (
     <TouchableOpacity
       onPress={snap}
-      style={[styles.container, { backgroundColor: colors.surface_primary }]}
+      style={[styles.container, { backgroundColor: colors.surface_secondary }]}
     >
       <Image
         source={{
