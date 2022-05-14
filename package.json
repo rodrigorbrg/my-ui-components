@@ -1,5 +1,5 @@
 {
-  "name": "@rodrigorbrg/my-ui-components",
+  "name": "my-ui-components",
   "version": "0.1.0",
   "description": "React Native widget component for feedbacks ",
   "main": "lib/commonjs/index",
@@ -26,7 +26,10 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/rodrigorbrg/my-ui-components-react-native",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigorbrg/my-ui-components-react-native.git"
+  },
   "author": "Rodrigo Gomes <rodrigorbrg@gmail.com> (https://github.com/rodrigorbrg)",
   "license": "MIT",
   "bugs": {
@@ -147,5 +150,8 @@
         }
       ]
     ]
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
