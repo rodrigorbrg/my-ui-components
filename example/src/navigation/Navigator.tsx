@@ -48,7 +48,7 @@ const Navigator = ({ theme }: { theme: Theme }) => {
         // headerShown: false,
         headerStyle: {
           backgroundColor: colors.surface_primary,
-          height: 40,
+          height: 80,
         },
         headerTitle: 'UI Components',
         headerTitleStyle: { color: colors.primary_variant },

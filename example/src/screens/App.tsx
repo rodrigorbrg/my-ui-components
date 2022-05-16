@@ -12,6 +12,8 @@ import {
   TextInput,
   ListItem,
   Searchbar,
+  HorizontalScroller,
+  Avatar,
 } from '@rodrigorbrg/my-ui-components';
 
 function App({ theme }: { theme: Theme }) {
@@ -50,6 +52,43 @@ function App({ theme }: { theme: Theme }) {
     },
   ];
 
+  const avatars = [
+    {
+      key: '1',
+      img: require('../assets/thought.png'),
+      label: 'Rock',
+      onPress: () => {},
+    },
+    {
+      key: '2',
+      // img: require('../assets/thought.png'),
+      label: 'Pagode',
+      onPress: () => {},
+    },
+    {
+      key: '3',
+      img: require('../assets/thought.png'),
+      label: 'Sertanejo',
+      onPress: () => {},
+    },
+    {
+      key: '4',
+      img: require('../assets/thought.png'),
+      label: 'Funk',
+      onPress: () => {},
+    },
+    {
+      key: '5',
+      img: require('../assets/thought.png'),
+      label: 'Samba',
+      onPress: () => {},
+    },
+  ];
+
+  const renderItens = ({ item }: any) => {
+    return <Avatar {...item} />;
+  };
+
   return (
     <View
       style={[styles.container, { backgroundColor: theme.colors.background }]}
@@ -72,6 +111,7 @@ function App({ theme }: { theme: Theme }) {
         <Button onPress={() => {}} style={styles.button}>
           {'Button 1'}
         </Button>
+        <HorizontalScroller items={avatars} renderItens={renderItens} />
         <FlatList
           keyExtractor={(item) => {
             return item.key;
