@@ -27,7 +27,7 @@ function Avatar({
       {img ? (
         <Image
           source={img}
-          style={[styles.avatar, { backgroundColor: colors.surface_secondary }]}
+          style={[styles.avatar, { borderColor: colors.surface_secondary }]}
         />
       ) : (
         <View

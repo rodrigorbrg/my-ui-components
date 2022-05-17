@@ -10,6 +10,7 @@ export default StyleSheet.create({
   },
   avatar: {
     borderRadius: 25,
+    borderWidth: 1,
     justifyContent: 'center',
   },
   label: {
