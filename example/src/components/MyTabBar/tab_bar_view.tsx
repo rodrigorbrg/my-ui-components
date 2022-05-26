@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { Theme, withTheme } from '@rodrigorbrg/my-ui-components';
 
@@ -54,7 +54,7 @@ function MyTabBar({ theme, state, descriptors, navigation }: TabBarProps) {
             ? styles.lastTab
             : styles.middle;
         return (
-          <TouchableOpacity
+          <Pressable
             accessibilityRole="button"
             accessibilityState={isFocused ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
@@ -88,7 +88,7 @@ function MyTabBar({ theme, state, descriptors, navigation }: TabBarProps) {
             >
               {label}
             </Text>
-          </TouchableOpacity>
+          </Pressable>
         );
       })}
     </View>

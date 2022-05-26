@@ -2,7 +2,7 @@ import React from 'react';
 import {
   ImageSourcePropType,
   Text,
-  TouchableOpacity,
+  Pressable,
   Image,
   View,
 } from 'react-native';
@@ -23,7 +23,7 @@ function Avatar({
 }) {
   const { colors } = theme;
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <Pressable style={styles.container} onPress={onPress}>
       {img ? (
         <Image
           source={img}
@@ -54,7 +54,7 @@ function Avatar({
           {label}
         </Text>
       )}
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 

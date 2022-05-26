@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, TouchableOpacity } from 'react-native';
+import { Image, Pressable } from 'react-native';
 import { Camera, Trash } from 'phosphor-react-native';
 import { captureScreen } from 'react-native-view-shot';
 
@@ -27,7 +27,7 @@ function SnapButton({ theme, screenshot, setScreenshot }: Props) {
     }
   };
   return (
-    <TouchableOpacity
+    <Pressable
       onPress={snap}
       style={[styles.container, { backgroundColor: colors.surface_secondary }]}
     >
@@ -46,7 +46,7 @@ function SnapButton({ theme, screenshot, setScreenshot }: Props) {
       ) : (
         <Trash color={colors.text_on_surface} size={24} style={styles.trash} />
       )}
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 export default withTheme(SnapButton);

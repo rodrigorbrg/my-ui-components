@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import {
   View,
-  TouchableOpacity,
+  Pressable,
   ActivityIndicator,
   Text,
   StyleProp,
@@ -106,13 +106,13 @@ function Button({
   }
 
   return (
-    <TouchableOpacity
+    <Pressable
       style={[styleButton(), styles.container, style, opacity]}
       onPress={onPress}
       disabled={disabled}
     >
       <Text style={[styles.text, { color: textColor }]}>{children}</Text>
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 

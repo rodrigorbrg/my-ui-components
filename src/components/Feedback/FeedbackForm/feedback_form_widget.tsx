@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  TouchableOpacity,
+  Pressable,
   TextInput,
   Text,
   View,
@@ -82,9 +82,9 @@ function FeedbackForm({
       style={[styles.container, { backgroundColor: colors.surface_primary }]}
     >
       <View style={styles.header}>
-        <TouchableOpacity style={styles.arrow} onPress={reset}>
+        <Pressable style={styles.arrow} onPress={reset}>
           <ArrowLeft color={colors.text_secondary} size={24} weight={'bold'} />
-        </TouchableOpacity>
+        </Pressable>
         <View style={styles.titleContainer}>
           <Image source={image} style={styles.image} />
           <Text style={[styles.title, { color: colors.text_on_background }]}>

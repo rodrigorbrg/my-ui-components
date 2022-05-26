@@ -31,7 +31,7 @@ function App({ theme }: { theme: Theme }) {
     });
     try {
       appAPI.getUri(defaultHeader);
-      // await appAPI.post('/feedback', body, defaultHeader); // await fetch('http://localhost:3333/feedback', {
+      await appAPI.post('/feedback', body, defaultHeader); // await fetch('http://localhost:3333/feedback', {
     } catch (e) {
       console.log(e);
     }
@@ -61,7 +61,7 @@ function App({ theme }: { theme: Theme }) {
     },
     {
       key: '2',
-      // img: require('../assets/thought.png'),
+      img: require('../assets/thought.png'),
       label: 'Pagode',
       onPress: () => {},
     },

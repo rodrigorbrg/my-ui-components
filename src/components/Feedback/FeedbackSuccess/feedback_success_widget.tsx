@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { View, Image, Text, Pressable } from 'react-native';
 
 import { withTheme, Theme } from '../../../context/ThemeProvider';
 import styles from './styles';
@@ -20,7 +20,7 @@ function FeedbackSuccess({
       <Text style={[styles.title, { color: theme.colors.text_on_background }]}>
         {'Agradecemos o feedback!'}
       </Text>
-      <TouchableOpacity
+      <Pressable
         style={[
           styles.button,
           { backgroundColor: theme.colors.surface_secondary },
@@ -35,7 +35,7 @@ function FeedbackSuccess({
         >
           {'Quero enviar outro'}
         </Text>
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 }

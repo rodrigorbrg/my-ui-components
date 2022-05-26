@@ -2,15 +2,15 @@ import React from 'react';
 import {
   Image,
   Text,
-  TouchableOpacity,
-  TouchableOpacityProps,
+  Pressable,
+  PressableProps,
   ImageSourcePropType,
 } from 'react-native';
 
 import { withTheme, Theme } from '../../../context/ThemeProvider';
 import styles from './styles';
 
-interface Props extends TouchableOpacityProps {
+interface Props extends PressableProps {
   theme: Theme;
   image: ImageSourcePropType;
   title: string;
@@ -19,7 +19,7 @@ interface Props extends TouchableOpacityProps {
 
 function Option({ theme, onPress, image, title, ...rest }: Props) {
   return (
-    <TouchableOpacity
+    <Pressable
       onPress={onPress}
       style={[
         styles.container,
@@ -31,7 +31,7 @@ function Option({ theme, onPress, image, title, ...rest }: Props) {
       <Text style={[styles.title, { color: theme.colors.text_on_surface }]}>
         {title}
       </Text>
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 export default withTheme(Option);

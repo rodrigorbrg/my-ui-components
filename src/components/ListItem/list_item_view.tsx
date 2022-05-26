@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import { MusicNote, ArrowRight } from 'phosphor-react-native';
 
 import { withTheme, Theme } from '../../context/ThemeProvider';
@@ -18,7 +18,7 @@ function ListItem({
 }) {
   const { colors } = theme;
   return (
-    <TouchableOpacity
+    <Pressable
       onPress={onPress}
       activeOpacity={0.7}
       style={[
@@ -38,7 +38,7 @@ function ListItem({
         {genre}
       </Text>
       <ArrowRight color={colors.primary_variant} weight={'light'} size={24} />
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 

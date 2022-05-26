@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useMemo, useState } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, Pressable } from 'react-native';
 import { ChatTeardropDots } from 'phosphor-react-native';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
@@ -53,7 +53,7 @@ function FeedbackWidget({
   return (
     <View style={styles.container}>
       {children}
-      <TouchableOpacity
+      <Pressable
         style={[styles.button, { backgroundColor: theme.colors.primary }]}
         onPress={handleSheetOpen}
         activeOpacity={0.8}
@@ -63,7 +63,7 @@ function FeedbackWidget({
           weight={'bold'}
           size={24}
         />
-      </TouchableOpacity>
+      </Pressable>
       <BottomSheet
         index={0}
         ref={sheetRef}
