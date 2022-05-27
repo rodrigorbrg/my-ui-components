@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`First test Button is disable correctly 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": true,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "opacity": 0.5,
+      },
+      Object {
+        "backgroundColor": "#29b6f6",
+        "borderColor": "#29b6f6",
+        "borderRadius": 6,
+        "borderWidth": 1,
+        "height": 40,
+        "opacity": 0.5,
+      },
+      Object {
+        "justifyContent": "center",
+        "paddingHorizontal": 8,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 14,
+          "fontWeight": "500",
+          "textAlign": "center",
+        },
+        Object {
+          "color": "#FFF",
+        },
+      ]
+    }
+  >
+    Button Test
+  </Text>
+</View>
+`;
+
+exports[`First test Button render correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "opacity": 1,
+      },
+      Object {
+        "backgroundColor": "#29b6f6",
+        "borderColor": "#29b6f6",
+        "borderRadius": 6,
+        "borderWidth": 1,
+        "height": 40,
+        "opacity": 1,
+      },
+      Object {
+        "justifyContent": "center",
+        "paddingHorizontal": 8,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 14,
+          "fontWeight": "500",
+          "textAlign": "center",
+        },
+        Object {
+          "color": "#FFF",
+        },
+      ]
+    }
+  >
+    Button Test
+  </Text>
+</View>
+`;

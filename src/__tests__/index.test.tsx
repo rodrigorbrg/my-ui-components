@@ -15,7 +15,7 @@ describe('First test', () => {
   });
 
   it('Button render correctly', async () => {
-    const { queryByText } = render(
+    const { queryByText, toJSON } = render(
       <Button onPress={submitButton}>{'Button Test'}</Button>
     );
 
@@ -25,6 +25,25 @@ describe('First test', () => {
     fireEvent.press(instance);
 
     expect(submitButton).toHaveBeenCalledTimes(1);
+
+    expect(toJSON()).toMatchSnapshot();
+  });
+
+  it('Button is disable correctly', async () => {
+    const { queryByText, toJSON } = render(
+      <Button onPress={submitButton} disabled>
+        {'Button Test'}
+      </Button>
+    );
+
+    const instance = queryByText('Button Test');
+    expect(instance).not.toBeNull();
+
+    expect(toJSON()).toMatchSnapshot();
+
+    fireEvent.press(instance);
+
+    expect(submitButton).toHaveBeenCalledTimes(0);
   });
 
   it('Avatar render correctly', async () => {
