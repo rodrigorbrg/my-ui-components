@@ -1,6 +1,6 @@
 {
   "name": "@rodrigorbrg/my-ui-components",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React Native widget component for feedbacks ",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
