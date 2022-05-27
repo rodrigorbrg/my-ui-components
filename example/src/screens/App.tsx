@@ -91,6 +91,7 @@ function App({ theme }: { theme: Theme }) {
 
   return (
     <View
+      testID="Example Screen"
       style={[styles.container, { backgroundColor: theme.colors.background }]}
     >
       <FeedbackWidget submitCallback={submit}>
