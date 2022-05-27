@@ -1,4 +1,3 @@
-// import {device, expect, element, by} from 'detox';
 describe('Example', () => {
   beforeAll(async () => {
     await device.launchApp();
@@ -9,6 +8,10 @@ describe('Example', () => {
   });
 
   it('should have welcome screen', async () => {
-    await expect(element(by.id('Example Components'))).toBeVisible();
+    await expect(element(by.id('Example Screen'))).toExist();
+  });
+
+  it('should click button on screen', async () => {
+    await element(by.text('Button 1')).tap();
   });
 });
