@@ -4,8 +4,10 @@
   "skipLegacyWorkersInjection": true,
   "apps": {
     "ios": {
+      "name": "WidgetFeedbackExample",
       "type": "ios.app",
-      "binaryPath": "SPECIFY_PATH_TO_YOUR_APP_BINARY"
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/WidgetFeedbackExample.app",
+      "build": "xcodebuild -workspace ios/WidgetFeedbackExample.xcworkspace -scheme WidgetFeedbackExample -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -destination id=E54F0EF1-2816-4CA6-9432-66E59B3A108B"
     },
     "android.debug": {
       "type": "android.apk",
@@ -22,7 +24,7 @@
     "simulator": {
       "type": "ios.simulator",
       "device": {
-        "type": "iPhone 11"
+        "type": "iPhone 13 Pro Max"
       }
     },
     "emulator": {
