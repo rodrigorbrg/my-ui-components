@@ -33,6 +33,7 @@ function FeedbackWidget({
   const sheetRef = useRef<BottomSheet>(null);
   const [typeFeedBack, setTypeFeedback] = useState<FeedbackType>(null);
   const [done, setDone] = useState(false);
+  const { colors } = theme;
 
   // variables
   const snapPoints = useMemo(() => [1, 270], []);
@@ -54,12 +55,17 @@ function FeedbackWidget({
     <View style={styles.container}>
       {children}
       <Pressable
-        style={[styles.button, { backgroundColor: theme.colors.primary }]}
+        style={({ pressed }) => [
+          styles.button,
+          {
+            backgroundColor: colors.primary,
+            opacity: pressed ? 0.7 : 1.0,
+          },
+        ]}
         onPress={handleSheetOpen}
-        activeOpacity={0.8}
       >
         <ChatTeardropDots
-          color={theme.colors.text_on_brand_color}
+          color={colors.text_on_brand_color}
           weight={'bold'}
           size={24}
         />
@@ -70,11 +76,11 @@ function FeedbackWidget({
         snapPoints={snapPoints}
         backgroundStyle={[
           styles.modal,
-          { backgroundColor: theme.colors.surface_primary },
+          { backgroundColor: colors.surface_primary },
         ]}
         handleIndicatorStyle={[
           styles.handle,
-          { backgroundColor: theme.colors.text_secondary },
+          { backgroundColor: colors.text_secondary },
         ]}
       >
         {!typeFeedBack ? (

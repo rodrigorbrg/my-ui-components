@@ -8,24 +8,22 @@ import styles from './styles';
 function ListItem({
   onPress,
   genre,
-  // icon,
   theme,
 }: {
   onPress: () => void;
   genre: string;
-  // icon: Image;
   theme: Theme;
 }) {
   const { colors } = theme;
   return (
     <Pressable
       onPress={onPress}
-      activeOpacity={0.7}
-      style={[
+      style={({ pressed }) => [
         styles.container,
         {
           backgroundColor: colors.surface_primary,
           borderColor: colors.surface_secondary,
+          opacity: pressed ? 0.7 : 1.0,
         },
       ]}
     >

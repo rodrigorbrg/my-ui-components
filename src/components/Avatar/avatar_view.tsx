@@ -23,7 +23,13 @@ function Avatar({
 }) {
   const { colors } = theme;
   return (
-    <Pressable style={styles.container} onPress={onPress}>
+    <Pressable
+      style={({ pressed }) => [
+        styles.container,
+        { opacity: pressed ? 0.7 : 1.0 },
+      ]}
+      onPress={onPress}
+    >
       {img ? (
         <Image
           source={img}

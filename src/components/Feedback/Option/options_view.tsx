@@ -21,9 +21,12 @@ function Option({ theme, onPress, image, title, ...rest }: Props) {
   return (
     <Pressable
       onPress={onPress}
-      style={[
+      style={({ pressed }) => [
         styles.container,
-        { backgroundColor: theme.colors.surface_secondary },
+        {
+          backgroundColor: theme.colors.surface_secondary,
+          opacity: pressed ? 0.7 : 1.0,
+        },
       ]}
       {...rest}
     >

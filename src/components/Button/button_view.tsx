@@ -33,16 +33,16 @@ function Button({
   const [textColor, setTextColor] = useState('#FFF');
   const [backgroundColor, setBackgroundColor] = useState(theme.colors.primary);
   const [borderColor, setBorderColor] = useState(theme.colors.primary);
-  const [opacity, setOpacity] = useState(
+  const [disableOpacity, setDisableOpacity] = useState(
     disabled ? { opacity: 0.5 } : { opacity: 1 }
   );
   const { colors } = theme;
 
   useEffect(() => {
     if (disabled) {
-      setOpacity({ opacity: 1 });
+      setDisableOpacity({ opacity: 0.5 });
     } else {
-      setOpacity({ opacity: 0.5 });
+      setDisableOpacity({ opacity: 1 });
     }
   }, [disabled]);
 
@@ -87,15 +87,19 @@ function Button({
     }
   }, [color, mode, colors]);
 
-  const styleButton = useCallback(() => {
-    return {
-      backgroundColor,
-      borderColor,
-      borderRadius: 6,
-      borderWidth: 1,
-      height: 40,
-    };
-  }, [backgroundColor, borderColor]);
+  const styleButton = useCallback(
+    (pressed: boolean = false) => {
+      return {
+        backgroundColor,
+        borderColor,
+        borderRadius: 6,
+        borderWidth: 1,
+        height: 40,
+        opacity: pressed ? 0.7 : disableOpacity.opacity,
+      };
+    },
+    [backgroundColor, borderColor, disableOpacity]
+  );
 
   if (loading) {
     return (
@@ -107,7 +111,12 @@ function Button({
 
   return (
     <Pressable
-      style={[styleButton(), styles.container, style, opacity]}
+      style={({ pressed }) => [
+        disableOpacity,
+        styleButton(pressed),
+        styles.container,
+        style,
+      ]}
       onPress={onPress}
       disabled={disabled}
     >

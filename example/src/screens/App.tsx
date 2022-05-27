@@ -108,7 +108,12 @@ function App({ theme }: { theme: Theme }) {
           // eslint-disable-next-line react-native/no-inline-styles
           style={{ marginVertical: 10, marginHorizontal: 20 }}
         />
-        <Button onPress={() => {}} style={styles.button}>
+        <Button
+          onPress={() => {
+            console.log('click');
+          }}
+          style={styles.button}
+        >
           {'Button 1'}
         </Button>
         <HorizontalScroller items={avatars} renderItens={renderItens} />
