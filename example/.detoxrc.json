@@ -7,16 +7,18 @@
       "name": "WidgetFeedbackExample",
       "type": "ios.app",
       "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/WidgetFeedbackExample.app",
-      "build": "xcodebuild -workspace ios/WidgetFeedbackExample.xcworkspace -scheme WidgetFeedbackExample -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -destination id=E54F0EF1-2816-4CA6-9432-66E59B3A108B"
+      "build": "xcodebuild -workspace ios/WidgetFeedbackExample.xcworkspace -scheme WidgetFeedbackExample -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=15.2'"
     },
     "android.debug": {
       "type": "android.apk",
       "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+      "testBinaryPath": "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
       "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd .."
     },
     "android.release": {
       "type": "android.apk",
       "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
+      "testBinaryPath": "android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk",
       "build": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && cd .."
     }
   },
@@ -30,7 +32,7 @@
     "emulator": {
       "type": "android.emulator",
       "device": {
-        "avdName": "Pixel_4_API_31"
+        "avdName": "Pixel_4_API_27"
       }
     }
   },
