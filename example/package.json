@@ -4,6 +4,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "android:detox:build": "detox build --configuration android.emu.debug -l verbose",
+    "android:detox:test": "detox test --configuration android.emu.debug -l verbose",
+    "ios:detox:build": "detox build --configuration ios -l verbose",
+    "ios:detox:test": "detox test --configuration ios -l verbose",
+    "android:prod:detox:build": "detox build --configuration android.emu.release -l verbose",
+    "android:prod:detox:test": "detox test --configuration android.emu.release -l verbose",
     "android": "NODE_ENV=development react-native run-android",
     "ios": "NODE_ENV=development react-native run-ios",
     "start": "react-native start",
@@ -35,8 +41,8 @@
     "@types/react-native": "^0.67.6",
     "@types/react-native-dotenv": "^0.2.0",
     "babel-plugin-module-resolver": "^4.0.0",
-    "detox": "^19.7.0",
-    "jest": ">=27.2.5",
+    "detox": "^19.7.1",
+    "jest": "^27.3.1",
     "metro-react-native-babel-preset": "^0.64.0",
     "react-native-dotenv": "^3.3.1",
     "typescript": "^4.6.4"
