@@ -14,6 +14,7 @@ import {
   Searchbar,
   HorizontalScroller,
   Avatar,
+  AnimatedLoading,
 } from '@rodrigorbrg/my-ui-components';
 
 function App({ theme }: { theme: Theme }) {
@@ -127,6 +128,7 @@ function App({ theme }: { theme: Theme }) {
           data={items}
           renderItem={({ item }) => <ListItem onPress={() => {}} {...item} />}
         />
+        <AnimatedLoading size={30} />
       </FeedbackWidget>
     </View>
   );
