@@ -5,7 +5,7 @@ import { withTheme, Theme } from '../../context/ThemeProvider';
 import styles from './styles';
 
 function AnimatedLoading({ theme, size }: { theme: Theme; size: number }) {
-  const progress = useRef(new Animated.Value(0.2)).current; // useSharedValue(0)
+  const progress = useRef(new Animated.Value(1)).current; // useSharedValue(0)
   const scale = useRef(new Animated.Value(1)).current;
 
   const { colors } = theme;
@@ -15,41 +15,62 @@ function AnimatedLoading({ theme, size }: { theme: Theme; size: number }) {
       Animated.parallel([
         Animated.sequence([
           Animated.spring(progress, {
-            speed: 60,
+            speed: 10,
             toValue: 1,
             useNativeDriver: true,
           }),
           Animated.spring(progress, {
-            speed: 60,
-            toValue: 0.8,
+            speed: 10,
+            toValue: 2,
             useNativeDriver: true,
           }),
           Animated.spring(progress, {
-            speed: 60,
-            toValue: 0.6,
+            speed: 10,
+            toValue: 3,
             useNativeDriver: true,
           }),
           Animated.spring(progress, {
-            speed: 60,
-            toValue: 0.4,
+            speed: 10,
+            toValue: 4,
             useNativeDriver: true,
           }),
           Animated.spring(progress, {
-            speed: 60,
-            toValue: 0.2,
+            speed: 10,
+            toValue: 5,
             useNativeDriver: true,
           }),
         ]),
         Animated.sequence([
-          Animated.spring(scale, { toValue: 1, useNativeDriver: true }),
-          Animated.spring(scale, { toValue: 1.4, useNativeDriver: true }),
-          Animated.spring(scale, { toValue: 1.6, useNativeDriver: true }),
-          Animated.spring(scale, { toValue: 2, useNativeDriver: true }),
+          Animated.spring(scale, {
+            speed: 5,
+            toValue: 2,
+            useNativeDriver: true,
+          }),
+          Animated.spring(scale, {
+            speed: 5,
+            toValue: 1,
+            useNativeDriver: true,
+          }),
+          Animated.spring(scale, {
+            speed: 5,
+            toValue: 2,
+            useNativeDriver: true,
+          }),
+          Animated.spring(scale, {
+            speed: 5,
+            toValue: 1,
+            useNativeDriver: true,
+          }),
+          Animated.spring(scale, {
+            speed: 5,
+            toValue: 0,
+            useNativeDriver: true,
+          }),
         ]),
       ]),
       { iterations: -1 }
     ).start();
-  }, []);
+  }, [progress, scale]);
 
   return (
     <View style={styles.container}>
@@ -58,24 +79,26 @@ function AnimatedLoading({ theme, size }: { theme: Theme; size: number }) {
           { backgroundColor: colors.primary, width: size, height: size },
           {
             borderRadius: /* progress.value * SIZE / 2 */ progress.interpolate({
-              inputRange: [0.2, 0.4, 0.6, 0.8, 1],
-              outputRange: [size / 2, size / 3, size / 4, size / 5, size / 6],
+              inputRange: [1, 2, 3, 4, 5],
+              outputRange: [size / 6, size / 6, size / 6, size / 4, size / 2],
             }),
-            // borderRadius: Animated.multiply(progress, SIZE / 2),
-            opacity: progress,
+            // opacity: progress,
             transform: [
               { scale },
               {
                 rotate: /* progress.value * 2 * Math.PI */ progress.interpolate(
                   {
-                    inputRange: [1.0, 1.4, 1.6, 2],
-                    outputRange: [`30deg`, `60deg`, `90deg`, `120deg`],
+                    inputRange: [1, 2, 3, 4, 5],
+                    outputRange: [
+                      '30deg',
+                      '360deg',
+                      '640deg',
+                      '360deg',
+                      '30deg',
+                    ],
                   }
                 ),
               },
-              // {
-              //   rotate: Animated.multiply(progress, 2 * Math.PI),
-              // },
             ],
           },
         ]}
